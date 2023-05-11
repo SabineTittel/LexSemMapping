@@ -1,0 +1,1120 @@
+@prefix :         <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix deaf:     <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix ontolex:  <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix synsem:   <http://www.w3.org/ns/lemon/synsem#> .
+@prefix dbr:      <https://dbpedia.org/resource/> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix lexinfo:  <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix olia:     <http://purl.org/olia/olia.owl#> .
+@prefix decomp:   <http://www.w3.org/ns/lemon/decomp#> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexvo:    <http://lexvo.org/id/iso639-3/> .
+@prefix lime:     <http://www.w3.org/ns/lemon/lime#> .
+@prefix lexicog:  <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix semshift: <http://www.deaf-page.de/ns/semshift#> .
+
+# semantic specification property
+deaf:idem rdf:type rdf:Property .
+
+# metadata annotation
+deaf:DEAF a ontolex:Lexicon , lime:Lexicon;
+  lime:language lexvo:fro ;
+  dct:creator
+  [
+	foaf:name "Sabine Tittel"@de ;
+	foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf>
+	] ;
+  dct:publisher
+  [
+  foaf:familyName "Tittel"@de ;
+  foaf:givenName "Sabine"@de ;
+  foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf>
+  ] ;
+  dct:rights "CC-Zero" ;
+  cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dct:date "2021-10-14"^^xsd:date .
+
+# ----------------------------------------------------
+# --- main lemma -------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+:flajol a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :flajol_form_flajol .
+:flajol_form_flajol a ontolex:Form ;
+	ontolex:writtenRep "flajol"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:DEAF_lexresource a lexicog:LexicographicResource ;
+  dct:language lexvo:fro ;
+  lexicog:entry deaf:flajol_entry .
+
+deaf:flajol_entry a lexicog:Entry ;
+  rdfs:member deaf:flajol_entity .
+
+deaf:flajol_entity a lexicog:LexicographicComponent ;
+  lexicog:describes :flajol .
+
+deaf:DEAF lime:entry :flajol .
+
+# --- etymology ----------------
+
+:flajol lemonety:etymology deaf:flajol_etymology .
+deaf:flajol_etymology a lemonety:Etymology ;
+  lemonety:etymology deaf:asterisk_flabiolum_etymon .
+
+deaf:asterisk_flabiolum_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajol_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "*flabiolum"@la .
+
+deaf:flajol_etymology lemonety:etymology deaf:asterisk_flabĕŏlum_etymon .
+deaf:asterisk_flabĕŏlum_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajol_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "*flabĕŏlum"@la .
+deaf:flajol_etymology lemonety:etymology deaf:flare_etymon .
+deaf:flare_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajol_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "flare"@la .
+deaf:flajol_etymology lemonety:etymology deaf:asterisk_flabellum_etymon .
+deaf:asterisk_flabellum_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajol_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "*flabellum"@la .
+deaf:flajol_etymology lemonety:etymology deaf:flare_etymon .
+deaf:flare_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajol_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "flare"@la .
+deaf:flajol_etymology lemonety:etymology deaf:asterisk_flabiolum_etymon .
+deaf:asterisk_flabiolum_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajol_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "*flabiolum"@la .
+# --- autres langues -----------
+
+deaf:asterisk_plagiolum_la a ontolex:LexicalEntry ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "*plagiolum"@la ;
+  lemonety:isCognateOf :flajol .
+deaf:plagiola_la a ontolex:LexicalEntry ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "plagiola"@la ;
+  lemonety:isCognateOf :flajol .
+deaf:flare_la a ontolex:LexicalEntry ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "flare"@la ;
+  lemonety:isCognateOf :flajol .
+deaf:flabrum_la a ontolex:LexicalEntry ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "flabrum"@la ;
+  lemonety:isCognateOf :flajol .
+deaf:πλαγίαυλος_el a ontolex:LexicalEntry ;
+  dct:language "grec"@fr , lexvo:ell ,
+  <https://id.loc.gov/vocabulary/iso639-1/el.html> ;
+  rdfs:label "πλαγίαυλος"@el ;
+  lemonety:isCognateOf :flajol .
+deaf:flaujol_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flaujol"@pro ;
+  lemonety:isCognateOf :flajol .
+deaf:flauja_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flauja"@pro ;
+  lemonety:isCognateOf :flajol .
+deaf:flaujar_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flaujar"@pro ;
+  lemonety:isCognateOf :flajol .
+deaf:flauzar_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flauzar"@pro ;
+  lemonety:isCognateOf :flajol .
+deaf:flaujolar_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flaujolar"@pro ;
+  lemonety:isCognateOf :flajol .
+deaf:flaviol_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "flaviol"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:floviol_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "floviol"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:flabiol_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "flabiol"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:flobiol_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "flobiol"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:fobiol_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "fobiol"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:fabiol_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "fabiol"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:flabioler_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "flabioler"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:flabiolejar_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "flabiolejar"@ca ;
+  lemonety:isCognateOf :flajol .
+deaf:flabuol_vec a ontolex:LexicalEntry ;
+  dct:language "vénitien"@fr , lexvo:vec ;
+  rdfs:label "flabuol"@vec ;
+  lemonety:isCognateOf :flajol .
+deaf:flaibol_vec a ontolex:LexicalEntry ;
+  dct:language "vénitien"@fr , lexvo:vec ;
+  rdfs:label "flaibol"@vec ;
+  lemonety:isCognateOf :flajol .
+deaf:fabyöl_pms a ontolex:LexicalEntry ;
+  dct:language "piémontais"@fr , lexvo:pms ;
+  rdfs:label "fabyöl"@pms ;
+  lemonety:isCognateOf :flajol .
+deaf:fabióch_pms a ontolex:LexicalEntry ;
+  dct:language "piémontais"@fr , lexvo:pms ;
+  rdfs:label "fabióch"@pms ;
+  lemonety:isCognateOf :flajol .
+deaf:fievole_ro a ontolex:LexicalEntry ;
+  dct:language "roumain"@fr , lexvo:ron ,
+  <https://id.loc.gov/vocabulary/iso639-1/ro.html> ;
+  rdfs:label "fievole"@ro ;
+  lemonety:isCognateOf :flajol .
+deaf:flambûl_fur a ontolex:LexicalEntry ;
+  dct:language "frioulan"@fr , lexvo:fur ;
+  rdfs:label "flambûl"@fur ;
+  lemonety:isCognateOf :flajol .
+deaf:fabló_lld a ontolex:LexicalEntry ;
+  dct:language "ladin"@fr , lexvo:lld ;
+  rdfs:label "fabló"@lld ;
+  lemonety:isCognateOf :flajol .
+deaf:flabrum_lttard a ontolex:LexicalEntry ;
+  dct:language "latin tardif"@fr , lexvo:unassigned ;
+  rdfs:label "flabrum"@unassigned ;
+  lemonety:isCognateOf :flajol .
+deaf:flaur_ro a ontolex:LexicalEntry ;
+  dct:language "roumain"@fr , lexvo:ron ,
+  <https://id.loc.gov/vocabulary/iso639-1/ro.html> ;
+  rdfs:label "flaur"@ro ;
+  lemonety:isCognateOf :flajol .
+deaf:fráwlu_it a ontolex:LexicalEntry ;
+  dct:language "italien"@fr , lexvo:ita ,
+  <https://id.loc.gov/vocabulary/iso639-1/it.html> ;
+  rdfs:label "fráwlu"@it ;
+  lemonety:isCognateOf :flajol .
+deaf:fráwulu_it a ontolex:LexicalEntry ;
+  dct:language "italien"@fr , lexvo:ita ,
+  <https://id.loc.gov/vocabulary/iso639-1/it.html> ;
+  rdfs:label "fráwulu"@it ;
+  lemonety:isCognateOf :flajol .
+deaf:frávele_it a ontolex:LexicalEntry ;
+  dct:language "italien"@fr , lexvo:ita ,
+  <https://id.loc.gov/vocabulary/iso639-1/it.html> ;
+  rdfs:label "frávele"@it ;
+  lemonety:isCognateOf :flajol .
+deaf:fláwru_it a ontolex:LexicalEntry ;
+  dct:language "italien"@fr , lexvo:ita ,
+  <https://id.loc.gov/vocabulary/iso639-1/it.html> ;
+  rdfs:label "fláwru"@it ;
+  lemonety:isCognateOf :flajol .
+deaf:flávuru_it a ontolex:LexicalEntry ;
+  dct:language "italien"@fr , lexvo:ita ,
+  <https://id.loc.gov/vocabulary/iso639-1/it.html> ;
+  rdfs:label "flávuru"@it ;
+  lemonety:isCognateOf :flajol .
+deaf:flagel_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "flagel"@enm ;
+  lemonety:isCognateOf :flajol .
+deaf:flegel_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "flegel"@enm ;
+  lemonety:isCognateOf :flajol .
+deaf:flogel_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "flogel"@enm ;
+  lemonety:isCognateOf :flajol .
+
+# --- graphical variants ----------------
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flajoil .
+:flajol_form_flajoil a ontolex:Form ;
+	ontolex:writtenRep "flajoil"@fro .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flageul .
+:flajol_form_flageul a ontolex:Form ;
+	ontolex:writtenRep "flageul"@fro .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flageoul .
+:flajol_form_flageoul a ontolex:Form ;
+	ontolex:writtenRep "flageoul"@fro .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flageol .
+:flajol_form_flageol a ontolex:Form ;
+	ontolex:writtenRep "flageol"@frm .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flajoel .
+:flajol_form_flajoel a ontolex:Form ;
+	ontolex:writtenRep "flajoel"@fro .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flagol .
+:flajol_form_flagol a ontolex:Form ;
+	ontolex:writtenRep "flagol"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flagol .
+:flajol_form_flagol a ontolex:Form ;
+	ontolex:writtenRep "flagol"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flagoil .
+:flajol_form_flagoil a ontolex:Form ;
+	ontolex:writtenRep "flagoil"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flaguel .
+:flajol_form_flaguel a ontolex:Form ;
+	ontolex:writtenRep "flaguel"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flagueil .
+:flajol_form_flagueil a ontolex:Form ;
+	ontolex:writtenRep "flagueil"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flacol .
+:flajol_form_flacol a ontolex:Form ;
+	ontolex:writtenRep "flacol"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_floigol .
+:flajol_form_floigol a ontolex:Form ;
+	ontolex:writtenRep "floigol"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flaizol .
+:flajol_form_flaizol a ontolex:Form ;
+	ontolex:writtenRep "flaizol"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flagoeul .
+:flajol_form_flagoeul a ontolex:Form ;
+	ontolex:writtenRep "flagoeul"@unassigned .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_flegol .
+:flajol_form_flegol a ontolex:Form ;
+	ontolex:writtenRep "flegol"@xno .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_fleiues .
+:flajol_form_fleiues a ontolex:Form ;
+	ontolex:writtenRep "fleiues"@fro .
+
+# graphical variant
+:flajol ontolex:otherForm :flajol_form_fleggars .
+:flajol_form_fleggars a ontolex:Form ;
+	ontolex:writtenRep "fleggars"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+
+:flajol ontolex:sense :flajol_sense1 ;
+  ontolex:evokes :flajol_sense1_lexConcept .
+
+:flajol_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajol_sense1_lexConcept ;
+  rdfs:comment "DEAF article flajol / main sense number 1"@en .
+
+:flajol_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "flûte droite, à bec et généralement percée de six trous, utilisée souvent par les pâtres"@fr ;
+  ontolex:lexicalizedSense :flajol_sense1 .
+
+# sub sense number 1.a.
+
+:flajol ontolex:sense :flajol_sense1.a ;
+  ontolex:evokes :flajol_sense1.a_lexConcept .
+
+:flajol_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajol_sense1.a_lexConcept ;
+  
+  ontolex:usage dbr:Hyponymy_and_hypernymy ;
+  semshift:minimalValue :flajol_sense1 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article flajol / main sense number 1.a"@en .
+
+:flajol_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "flûte droite, à bec et généralement percée de six trous, utilisée souvent par les pâtres"@fr ;
+  deaf:idem "“id.”, utilisé pour exprimer une  val. min."@fr ;
+  ontolex:lexicalizedSense :flajol_sense1.a .
+
+# sub sense number 1.b.
+
+:flajol ontolex:sense :flajol_sense1.b ;
+  ontolex:evokes :flajol_sense1.b_lexConcept .
+
+:flajol_sense1.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajol_sense1.b_lexConcept ;
+  
+  ontolex:usage dbr:Metonymy ;
+  semshift:metonymy :flajol_sense1 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article flajol / main sense number 1.b"@en .
+
+:flajol_sense1.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "action de louer excessivement ou faussement (qn), pour plaire ou séduire, action de flatter (qn)"@fr ;
+  ontolex:lexicalizedSense :flajol_sense1.b .
+
+# main sense number 2.
+
+:flajol ontolex:sense :flajol_sense2 ;
+  ontolex:evokes :flajol_sense2_lexConcept .
+
+:flajol_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajol_sense2_lexConcept ;
+  rdfs:comment "DEAF article flajol / main sense number 2"@en .
+
+:flajol_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "objet de matière légère, portatif, qu'on agite pour produire un courant d'air (pour se rafraîchir), éventail"@fr ;
+  ontolex:lexicalizedSense :flajol_sense2 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajole> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "f."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:feminine ;
+  ontolex:canonicalForm :flajole_form_flajole .
+:flajole_form_flajole a ontolex:Form ;
+	ontolex:writtenRep "flajole"@unassigned .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flajole_entity .
+deaf:flajole_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajole> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajole> .
+
+# --- etymology ----------------
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajole> ontolex:sense :flajole_sense1 ;
+  ontolex:evokes :flajole_sense1_lexConcept .
+
+:flajole_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajole_sense1_lexConcept ;
+  rdfs:comment "DEAF article flajole / main sense number 1"@en .
+
+:flajole_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "flûte droite, à bec et généralement percée de six trous, utilisée souvent par les pâtres"@fr ;
+  ontolex:lexicalizedSense :flajole_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :flajot_form_flajot .
+:flajot_form_flajot a ontolex:Form ;
+	ontolex:writtenRep "flajot"@unassigned .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flajot_entity .
+deaf:flajot_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> .
+
+# --- etymology ----------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> lemonety:etymology deaf:flajot_etymology .
+deaf:flajot_etymology a lemonety:Etymology ;
+  lemonety:etymology deaf:ottus_etymon .
+
+deaf:ottus_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajot_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "-ottus"@la .
+
+deaf:flajot_etymology lemonety:etymology deaf:ittus_etymon .
+deaf:ittus_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flajot_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "-ittus"@la .
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ontolex:otherForm :flajot_form_flagot .
+:flajot_form_flagot a ontolex:Form ;
+	ontolex:writtenRep "flagot"@unassigned .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ontolex:otherForm :flajot_form_flagot .
+:flajot_form_flagot a ontolex:Form ;
+	ontolex:writtenRep "flagot"@unassigned .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ontolex:sense :flajot_sense1 ;
+  ontolex:evokes :flajot_sense1_lexConcept .
+
+:flajot_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajot_sense1_lexConcept ;
+  rdfs:comment "DEAF article flajot / main sense number 1"@en .
+
+:flajot_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "flûte droite, à bec et généralement percée de six trous, utilisée souvent par les pâtres"@fr ;
+  ontolex:lexicalizedSense :flajot_sense1 .
+
+# sub sense number 1.a.
+
+# collocation "flajot de Saux"
+:flajot_de_Saux a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ;
+  vartrans:lexicalRel lexinfo:collocation ;
+  rdfs:label "flajot de Saux"@fro ;
+  ontolex:canonicalForm :flajot_de_Saux_form .
+
+:flajot_de_Saux_form a ontolex:Form ;
+  ontolex:writtenRep "flajot de Saux"@fro .
+
+:flajot_de_Saux ontolex:sense :flajot_sense1.a ;
+  ontolex:evokes :flajot_sense1.a_lexConcept .
+
+:flajot_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajot_sense1.a_lexConcept ;
+  rdfs:comment "DEAF article flajot / sub sense number 1.a"@en .
+
+:flajot_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "flûte droite, à bec et généralement percée de six trous, utilisée souvent par les pâtres"@fr ;
+  deaf:idem "“id.”"@fr ;
+  ontolex:lexicalizedSense :flajot_sense1.a .
+
+# sub sense number 1.b.
+
+# collocation "flajot doblier"
+:flajot_doblier a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ;
+  vartrans:lexicalRel lexinfo:collocation ;
+  rdfs:label "flajot doblier"@fro ;
+  ontolex:canonicalForm :flajot_doblier_form .
+
+:flajot_doblier_form a ontolex:Form ;
+  ontolex:writtenRep "flajot doblier"@fro .
+
+:flajot_doblier ontolex:sense :flajot_sense1.b ;
+  ontolex:evokes :flajot_sense1.b_lexConcept .
+
+:flajot_sense1.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajot_sense1.b_lexConcept ;
+  rdfs:comment "DEAF article flajot / sub sense number 1.b"@en .
+
+:flajot_sense1.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de flûte à double tuyau"@fr ;
+  ontolex:lexicalizedSense :flajot_sense1.b .
+
+# sub sense number 1.c.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ontolex:sense :flajot_sense1.c ;
+  ontolex:evokes :flajot_sense1.c_lexConcept .
+
+:flajot_sense1.c a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajot_sense1.c_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajot_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajot / main sense number 1.c"@en .
+
+:flajot_sense1.c_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "celui qui ne joue pas franc, qui joue un double jeu"@fr ;
+  ontolex:lexicalizedSense :flajot_sense1.c .
+
+# sub sense number 1.d.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ontolex:sense :flajot_sense1.d ;
+  ontolex:evokes :flajot_sense1.d_lexConcept .
+
+:flajot_sense1.d a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajot_sense1.d_lexConcept ;
+  
+  ontolex:usage dbr:Metonymy ;
+  semshift:metonymy :flajot_sense1 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article flajot / main sense number 1.d"@en .
+
+:flajot_sense1.d_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "action de louer excessivement ou faussement (qn), pour plaire ou séduire, action de flatter (qn)"@fr ;
+  ontolex:lexicalizedSense :flajot_sense1.d .
+
+# main sense number 2.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajot> ontolex:sense :flajot_sense2 ;
+  ontolex:evokes :flajot_sense2_lexConcept .
+
+:flajot_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajot_sense2_lexConcept ;
+  rdfs:comment "DEAF article flajot / main sense number 2"@en .
+
+:flajot_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "objet de matière légère, portatif, qu'on agite pour produire un courant d'air (pour se raffraîchir), éventail"@fr ;
+  ontolex:lexicalizedSense :flajot_sense2 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "v."@fr ,
+  lexinfo:verb ;
+  ontolex:canonicalForm :flajoler_form_flajoler .
+:flajoler_form_flajoler a ontolex:Form ;
+	ontolex:writtenRep "flajoler"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flajoler_entity .
+deaf:flajoler_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:otherForm :flajoler_form_flajioler .
+:flajoler_form_flajioler a ontolex:Form ;
+	ontolex:writtenRep "flajioler"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:otherForm :flajoler_form_flageuler .
+:flajoler_form_flageuler a ontolex:Form ;
+	ontolex:writtenRep "flageuler"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:otherForm :flajoler_form_flagoler .
+:flajoler_form_flagoler a ontolex:Form ;
+	ontolex:writtenRep "flagoler"@unassigned .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:otherForm :flajoler_form_flagoller .
+:flajoler_form_flagoller a ontolex:Form ;
+	ontolex:writtenRep "flagoller"@unassigned .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense1 ;
+  ontolex:evokes :flajoler_sense1_lexConcept .
+
+:flajoler_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense1_lexConcept ;
+  rdfs:comment "DEAF article flajoler / main sense number 1"@en .
+
+:flajoler_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "jouer du flajol"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense1 .
+
+# sub sense number 1.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense1.a ;
+  ontolex:evokes :flajoler_sense1.a_lexConcept .
+
+:flajoler_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense1.a_lexConcept ;
+  rdfs:comment "DEAF article flajoler / main sense number 1.a"@en .
+
+:flajoler_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "action de jouer du flajol, le résultat de cette action"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense1.a .
+
+# sub sense number 1.b.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense1.b ;
+  ontolex:evokes :flajoler_sense1.b_lexConcept .
+
+:flajoler_sense1.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense1.b_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajoler_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajoler / main sense number 1.b"@en .
+
+:flajoler_sense1.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "parler d’une manière futile, babiller"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense1.b .
+
+# sub sense number 1.c.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense1.c ;
+  ontolex:evokes :flajoler_sense1.c_lexConcept .
+
+:flajoler_sense1.c a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense1.c_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajoler_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajoler / main sense number 1.c"@en .
+
+:flajoler_sense1.c_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "louer excessivement ou faussement (qn), pour plaire ou séduire, flatter (qn)"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense1.c .
+
+# sub sense number 1.d.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense1.d ;
+  ontolex:evokes :flajoler_sense1.d_lexConcept .
+
+:flajoler_sense1.d a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense1.d_lexConcept ;
+  rdfs:comment "DEAF article flajoler / main sense number 1.d"@en .
+
+:flajoler_sense1.d_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire son son (en parlant d’un flajol)"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense1.d .
+
+# sub sense number 1.e.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense1.e ;
+  ontolex:evokes :flajoler_sense1.e_lexConcept .
+
+:flajoler_sense1.e a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense1.e_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajoler_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajoler / main sense number 1.e"@en .
+
+:flajoler_sense1.e_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire un son qui ressemble à celui du flajol (en parlant des oiseaux)"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense1.e .
+
+# main sense number 2.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense2 ;
+  ontolex:evokes :flajoler_sense2_lexConcept .
+
+:flajoler_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense2_lexConcept ;
+  rdfs:comment "DEAF article flajoler / main sense number 2"@en .
+
+:flajoler_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "jouer (qch.) sur le flajol"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense2 .
+
+# sub sense number 2.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense2.a ;
+  ontolex:evokes :flajoler_sense2.a_lexConcept .
+
+:flajoler_sense2.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense2.a_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajoler_sense2 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajoler / main sense number 2.a"@en .
+
+:flajoler_sense2.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "raconter (qch. de futile, douteux, des balivernes ou sim.)"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense2.a .
+
+# sub sense number 2.b.
+
+# locution "flajoler la langue"
+:flajoler_la_langue a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ;
+  rdfs:label "flajoler la langue"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :flajoler_la_langue_form .
+
+:flajoler_la_langue_form a ontolex:Form ;
+  ontolex:writtenRep "flajoler la langue"@fro .
+
+:flajoler_la_langue ontolex:sense :flajoler_sense2.b ;
+  ontolex:evokes :flajoler_sense2.b_lexConcept .
+
+:flajoler_sense2.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense2.b_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajoler_sense2 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajoler / sub sense number 2.b"@en .
+
+:flajoler_sense2.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "mener un discours"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense2.b .
+
+# main sense number 3.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoler> ontolex:sense :flajoler_sense3 ;
+  ontolex:evokes :flajoler_sense3_lexConcept .
+
+:flajoler_sense3 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoler_sense3_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajoler_sense3 ;
+  rdfs:comment "usage: annotation in top level of semantic structure"@en ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajoler / main sense number 3"@en .
+
+:flajoler_sense3_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "louer excessivement ou faussement (qn), pour plaire ou séduire, flatter (qn)"@fr ;
+  ontolex:lexicalizedSense :flajoler_sense3 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolement> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :flajolement_form_flajolement .
+:flajolement_form_flajolement a ontolex:Form ;
+	ontolex:writtenRep "flajolement"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flajolement_entity .
+deaf:flajolement_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolement> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolement> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolement> ontolex:otherForm :flajolement_form_flagolement .
+:flajolement_form_flagolement a ontolex:Form ;
+	ontolex:writtenRep "flagolement"@unassigned .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolement> ontolex:sense :flajolement_sense1 ;
+  ontolex:evokes :flajolement_sense1_lexConcept .
+
+:flajolement_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajolement_sense1_lexConcept ;
+  rdfs:comment "DEAF article flajolement / main sense number 1"@en .
+
+:flajolement_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "action de jouer du flajol; son produit en jouant du flajol"@fr ;
+  ontolex:lexicalizedSense :flajolement_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolet> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :flajolet_form_flajolet .
+:flajolet_form_flajolet a ontolex:Form ;
+	ontolex:writtenRep "flajolet"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flajolet_entity .
+deaf:flajolet_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolet> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolet> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolet> ontolex:otherForm :flajolet_form_flageulet .
+:flajolet_form_flageulet a ontolex:Form ;
+	ontolex:writtenRep "flageulet"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajolet> ontolex:sense :flajolet_sense1 ;
+  ontolex:evokes :flajolet_sense1_lexConcept .
+
+:flajolet_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajolet_sense1_lexConcept ;
+  rdfs:comment "DEAF article flajolet / main sense number 1"@en .
+
+:flajolet_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "petite flûte droite, à bec et généralement percée de six trous, utilisée souvent par les pâtres, flageolet"@fr ;
+  ontolex:lexicalizedSense :flajolet_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoleor> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :flajoleor_form_flajoleor .
+:flajoleor_form_flajoleor a ontolex:Form ;
+	ontolex:writtenRep "flajoleor"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flajoleor_entity .
+deaf:flajoleor_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoleor> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoleor> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoleor> ontolex:otherForm :flajoleor_form_flajoleur .
+:flajoleor_form_flajoleur a ontolex:Form ;
+	ontolex:writtenRep "flajoleur"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoleor> ontolex:sense :flajoleor_sense1 ;
+  ontolex:evokes :flajoleor_sense1_lexConcept .
+
+:flajoleor_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoleor_sense1_lexConcept ;
+  rdfs:comment "DEAF article flajoleor / main sense number 1"@en .
+
+:flajoleor_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "celui qui joue du flajol"@fr ;
+  ontolex:lexicalizedSense :flajoleor_sense1 .
+
+# sub sense number 1.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flajoleor> ontolex:sense :flajoleor_sense1.a ;
+  ontolex:evokes :flajoleor_sense1.a_lexConcept .
+
+:flajoleor_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flajoleor_sense1.a_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flajoleor_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flajoleor / main sense number 1.a"@en .
+
+:flajoleor_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "celui qui cherche à tromper (qn) par des paroles flatteuses, enjôleur"@fr ;
+  ontolex:lexicalizedSense :flajoleor_sense1.a .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :flagel_form_flagel .
+:flagel_form_flagel a ontolex:Form ;
+	ontolex:writtenRep "flagel"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flagel_entity .
+deaf:flagel_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> .
+
+# --- etymology ----------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> lemonety:etymology deaf:flagel_etymology .
+deaf:flagel_etymology a lemonety:Etymology ;
+  lemonety:etymology deaf:ellum_etymon .
+
+deaf:ellum_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:flagel_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "-ellum"@la .
+
+# --- autres langues -----------
+
+deaf:flabellum_la a ontolex:LexicalEntry ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "flabellum"@la ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> .
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> ontolex:otherForm :flagel_form_flajel .
+:flagel_form_flajel a ontolex:Form ;
+	ontolex:writtenRep "flajel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> ontolex:otherForm :flagel_form_fregel .
+:flagel_form_fregel a ontolex:Form ;
+	ontolex:writtenRep "fregel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> ontolex:otherForm :flagel_form_flael .
+:flagel_form_flael a ontolex:Form ;
+	ontolex:writtenRep "flael"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> ontolex:sense :flagel_sense1 ;
+  ontolex:evokes :flagel_sense1_lexConcept .
+
+:flagel_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flagel_sense1_lexConcept ;
+  rdfs:comment "DEAF article flagel / main sense number 1"@en .
+
+:flagel_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "flûte droite, à bec et généralement percée de six trous, utilisée souvent par les pâtres"@fr ;
+  ontolex:lexicalizedSense :flagel_sense1 .
+
+# sub sense number 1.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> ontolex:sense :flagel_sense1.a ;
+  ontolex:evokes :flagel_sense1.a_lexConcept .
+
+:flagel_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flagel_sense1.a_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flagel_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flagel / main sense number 1.a"@en .
+
+:flagel_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "partie intérieure du cou comprenant l’arrière-gorge et la première partie du pharynx, gosier"@fr ;
+  ontolex:lexicalizedSense :flagel_sense1.a .
+
+# main sense number 2.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> ontolex:sense :flagel_sense2 ;
+  ontolex:evokes :flagel_sense2_lexConcept .
+
+:flagel_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flagel_sense2_lexConcept ;
+  rdfs:comment "DEAF article flagel / main sense number 2"@en .
+
+:flagel_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "objet de matière légère, portatif, qu'on agite pour produire un courant d'air (pour se raffraîchir), éventail"@fr ;
+  ontolex:lexicalizedSense :flagel_sense2 .
+
+# sub sense number 2.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flagel> ontolex:sense :flagel_sense2.a ;
+  ontolex:evokes :flagel_sense2.a_lexConcept .
+
+:flagel_sense2.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flagel_sense2.a_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :flagel_sense2 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article flagel / main sense number 2.a"@en .
+
+:flagel_sense2.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "objet de matière légère, portatif, qu'on agite pour produire un courant d'air (pour se raffraîchir), éventail"@fr ;
+  deaf:idem "“id.”, utilisé pour gloser une  métaphore  pour le poumon"@fr ;
+  ontolex:lexicalizedSense :flagel_sense2.a .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flageler> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "v.tr."@fr ,
+  lexinfo:verb ;
+  synsem:synBehavior
+    [ a synsem:SyntacticFrame , lexinfo:TransitiveFrame ] ;
+  ontolex:canonicalForm :flageler_form_flageler .
+:flageler_form_flageler a ontolex:Form ;
+	ontolex:writtenRep "flageler"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:flajol_entry rdfs:member deaf:flageler_entity .
+deaf:flageler_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flageler> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flageler> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flageler> ontolex:otherForm :flageler_form_flajeler .
+:flageler_form_flajeler a ontolex:Form ;
+	ontolex:writtenRep "flajeler"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flageler> ontolex:sense :flageler_sense1 ;
+  ontolex:evokes :flageler_sense1_lexConcept .
+
+:flageler_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flageler_sense1_lexConcept ;
+  rdfs:comment "DEAF article flageler / main sense number 1"@en .
+
+:flageler_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "jouer du flajol"@fr ;
+  ontolex:lexicalizedSense :flageler_sense1 .
+
+# sub sense number 1.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/flajol#flageler> ontolex:sense :flageler_sense1.a ;
+  ontolex:evokes :flageler_sense1.a_lexConcept .
+
+:flageler_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :flageler_sense1.a_lexConcept ;
+  rdfs:comment "DEAF article flageler / main sense number 1.a"@en .
+
+:flageler_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire son son (en parlant d’un flajol)"@fr ;
+  ontolex:lexicalizedSense :flageler_sense1.a .

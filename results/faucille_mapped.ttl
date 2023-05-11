@@ -1,0 +1,421 @@
+@prefix : <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix deaf: <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexicog: <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix lexinfo: <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix lexvo: <http://lexvo.org/id/iso639-3/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+deaf:DEAF a lime:Lexicon,
+        ontolex:Lexicon ;
+    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:creator [ foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ;
+            foaf:name "Stephen Dörr"@de ] ;
+    dct:date "2021-10-14"^^xsd:date ;
+    dct:publisher [ foaf:familyName "Tittel"@de ;
+            foaf:givenName "Sabine"@de ;
+            foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ] ;
+    dct:rights "CC-Zero" ;
+    lime:entry :faucille,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucil>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillage>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillement>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucilleor>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillier1>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillier2>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillon> ;
+    lime:language lexvo:fro .
+
+deaf:DEAF_lexresource a lexicog:LexicographicResource ;
+    dct:language lexvo:fro ;
+    lexicog:entry deaf:faucille_entry .
+
+deaf:facellus_anglolt a ontolex:LexicalEntry ;
+    rdfs:label "facellus"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucil> ;
+    dct:language lexvo:unassigned,
+        "anglo-latin"@fr .
+
+deaf:falcile_mlt a ontolex:LexicalEntry ;
+    rdfs:label "falcile"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucil> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:falxiculus_anglolt a ontolex:LexicalEntry ;
+    rdfs:label "falxiculus"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucil> ;
+    dct:language lexvo:unassigned,
+        "anglo-latin"@fr .
+
+deaf:falzía_ca a ontolex:LexicalEntry ;
+    rdfs:label "falzía"@ca ;
+    lemonety:isCognateOf :faucille ;
+    dct:language lexvo:cat,
+        <https://id.loc.gov/vocabulary/iso639-1/ca.html>,
+        "catalan"@fr .
+
+deaf:faucilla_oc a ontolex:LexicalEntry ;
+    rdfs:label "faucilla"@oc ;
+    lemonety:isCognateOf :faucille ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/oc.html>,
+        lexvo:oci,
+        "occitan"@fr .
+
+deaf:fausil_oc a ontolex:LexicalEntry ;
+    rdfs:label "fausil"@oc ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucil> ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/oc.html>,
+        lexvo:oci,
+        "occitan"@fr .
+
+deaf:idem a rdf:Property .
+
+:Se_bech_i_a_faucille_soit a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "Se bech i a, faucille soit"@fro ;
+    decomp:subterm :faucille ;
+    lexinfo:termType lexinfo:proverb .
+
+deaf:falcile_etymon a lemonety:Etymon ;
+    rdfs:label "falcile"@la ;
+    lemonety:isEtymologyOf deaf:faucil_etymology ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+deaf:falcīcula_etymon a lemonety:Etymon ;
+    rdfs:label "falcīcula"@la ;
+    lemonety:isEtymologyOf deaf:faucille_etymology ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+deaf:faucil_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucil> .
+
+deaf:faucillage_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillage> .
+
+deaf:faucille_entity a lexicog:LexicographicComponent ;
+    lexicog:describes :faucille .
+
+deaf:faucille_entry a lexicog:Entry ;
+    rdfs:member deaf:faucil_entity,
+        deaf:faucillage_entity,
+        deaf:faucille_entity,
+        deaf:faucillement_entity,
+        deaf:faucilleor_entity,
+        deaf:faucillier1_entity,
+        deaf:faucillier2_entity,
+        deaf:faucillon_entity .
+
+deaf:faucillement_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillement> .
+
+deaf:faucilleor_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucilleor> .
+
+deaf:faucillier1_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillier1> .
+
+deaf:faucillier2_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillier2> .
+
+deaf:faucillon_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillon> .
+
+:faucil_form_facil a ontolex:Form ;
+    ontolex:writtenRep "facil"@xno .
+
+:faucil_form_faucil a ontolex:Form ;
+    ontolex:writtenRep "faucil"@xno .
+
+:faucillage_form_fauchillage a ontolex:Form ;
+    ontolex:writtenRep "fauchillage"@unassigned .
+
+:faucillage_form_faucillage a ontolex:Form ;
+    ontolex:writtenRep "faucillage"@fro .
+
+:faucille_form_facile a ontolex:Form ;
+    ontolex:writtenRep "facile"@fro .
+
+:faucille_form_facille a ontolex:Form ;
+    ontolex:writtenRep "facille"@fro .
+
+:faucille_form_falcille a ontolex:Form ;
+    ontolex:writtenRep "falcille"@fro .
+
+:faucille_form_fauchille a ontolex:Form ;
+    ontolex:writtenRep "fauchille"@unassigned .
+
+:faucille_form_faucihle a ontolex:Form ;
+    ontolex:writtenRep "faucihle"@fro .
+
+:faucille_form_faucile a ontolex:Form ;
+    ontolex:writtenRep "faucile"@fro .
+
+:faucille_form_faucille a ontolex:Form ;
+    ontolex:writtenRep "faucille"@fro .
+
+:faucille_form_fausille a ontolex:Form ;
+    ontolex:writtenRep "fausille"@fro .
+
+:faucille_form_fucile a ontolex:Form ;
+    ontolex:writtenRep "fucile"@fro .
+
+:faucillement_form_faucillement a ontolex:Form ;
+    ontolex:writtenRep "faucillement"@fro .
+
+:faucilleor_form_fauchillieur a ontolex:Form ;
+    ontolex:writtenRep "fauchillieur"@unassigned .
+
+:faucilleor_form_faucilleur a ontolex:Form ;
+    ontolex:writtenRep "faucilleur"@fro .
+
+:faucilleor_form_faucillor a ontolex:Form ;
+    ontolex:writtenRep "faucillor"@fro .
+
+:faucilleor_form_faucillour a ontolex:Form ;
+    ontolex:writtenRep "faucillour"@fro .
+
+:faucillier1_form_faucilier a ontolex:Form ;
+    ontolex:writtenRep "faucilier"@fro .
+
+:faucillier1_form_fauciller a ontolex:Form ;
+    ontolex:writtenRep "fauciller"@fro .
+
+:faucillier1_form_faucillier a ontolex:Form ;
+    ontolex:writtenRep "faucillier"@fro .
+
+:faucillier1_form_faucillier1 a ontolex:Form ;
+    ontolex:writtenRep "faucillier"@fro .
+
+:faucillier1_form_fausilier a ontolex:Form ;
+    ontolex:writtenRep "fausilier"@fro .
+
+:faucillier1_form_fausillier a ontolex:Form ;
+    ontolex:writtenRep "fausillier"@fro .
+
+:faucillier2_form_faucillex a ontolex:Form ;
+    ontolex:writtenRep "faucillex"@unassigned .
+
+:faucillier2_form_faucillier2 a ontolex:Form ;
+    ontolex:writtenRep "faucillier"@fro .
+
+:faucillon_form_fauchillon a ontolex:Form ;
+    ontolex:writtenRep "fauchillon"@unassigned .
+
+:faucillon_form_faucillon a ontolex:Form ;
+    ontolex:writtenRep "faucillon"@fro .
+
+:faucillon_form_fauquillon a ontolex:Form ;
+    ontolex:writtenRep "fauquillon"@unassigned .
+
+deaf:faucil_etymology a lemonety:Etymology ;
+    lemonety:etymology deaf:falcile_etymon .
+
+deaf:faucille_etymology a lemonety:Etymology ;
+    lemonety:etymology deaf:falcīcula_etymon .
+
+:faucil_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucil / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucil_sense1_lexConcept .
+
+:faucil_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "instrument formé d’une étroite lame d’acier lisse ou dentelée, courbée en demi-cercle, montée sur une poignée et qui sert à couper l’herbe, les céréales, etc."@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucil_sense1 .
+
+:faucillage_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucillage / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucillage_sense1_lexConcept .
+
+:faucillage_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "action de couper avec une faucille"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucillage_sense1 .
+
+:faucillage_sense2 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucillage / main sense number 2"@en ;
+    ontolex:isLexicalizedSenseOf :faucillage_sense2_lexConcept .
+
+:faucillage_sense2_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "droit féodal sur la fauchaison"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucillage_sense2 .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillage> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :faucillage_form_faucillage ;
+    ontolex:evokes :faucillage_sense1_lexConcept,
+        :faucillage_sense2_lexConcept ;
+    ontolex:otherForm :faucillage_form_fauchillage ;
+    ontolex:sense :faucillage_sense1,
+        :faucillage_sense2 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillement> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :faucillement_form_faucillement ;
+    ontolex:evokes :faucillement_sense1_lexConcept ;
+    ontolex:sense :faucillement_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucilleor> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    rdfs:comment "developed form"@en ;
+    ontolex:evokes :faucilleor_sense1_lexConcept ;
+    ontolex:otherForm :faucilleor_form_fauchillieur,
+        :faucilleor_form_faucilleur,
+        :faucilleor_form_faucillor,
+        :faucilleor_form_faucillour ;
+    ontolex:sense :faucilleor_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillier1> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :faucillier1_form_faucillier1 ;
+    ontolex:evokes :faucillier1_sense1.a_lexConcept,
+        :faucillier1_sense1_lexConcept ;
+    ontolex:otherForm :faucillier1_form_faucilier,
+        :faucillier1_form_fauciller,
+        :faucillier1_form_faucillier,
+        :faucillier1_form_fausilier,
+        :faucillier1_form_fausillier ;
+    ontolex:sense :faucillier1_sense1,
+        :faucillier1_sense1.a ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:TransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.tr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillier2> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :faucillier2_form_faucillier2 ;
+    ontolex:evokes :faucillier2_sense1_lexConcept ;
+    ontolex:otherForm :faucillier2_form_faucillex ;
+    ontolex:sense :faucillier2_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucillon> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :faucillon_form_faucillon ;
+    ontolex:evokes :faucillon_sense1_lexConcept ;
+    ontolex:otherForm :faucillon_form_fauchillon,
+        :faucillon_form_fauquillon ;
+    ontolex:sense :faucillon_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+:faucille_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucille / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucille_sense1_lexConcept .
+
+:faucille_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "instrument formé d’une étroite lame d’acier lisse ou dentelée, courbée en demi-cercle, montée sur une poignée et qui sert à couper l’herbe, les céréales, etc."@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucille_sense1 .
+
+:faucillement_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucillement / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucillement_sense1_lexConcept .
+
+:faucillement_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "action de couper avec une faucille"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucillement_sense1 .
+
+:faucilleor_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucilleor / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucilleor_sense1_lexConcept .
+
+:faucilleor_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "ouvrier qui coupe avec la faucille"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucilleor_sense1 .
+
+:faucillier1_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucillier1 / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucillier1_sense1_lexConcept .
+
+:faucillier1_sense1.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucillier1 / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :faucillier1_sense1.a_lexConcept .
+
+:faucillier1_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "couper avec la faucille (le blé, etc.)"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucillier1_sense1.a ;
+    deaf:idem "“id.”"@fr .
+
+:faucillier1_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "couper avec la faucille (le blé, etc.)"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucillier1_sense1 .
+
+:faucillier2_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucillier2 / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucillier2_sense1_lexConcept .
+
+:faucillier2_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "ouvrier qui coupe avec la faucille"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucillier2_sense1 .
+
+:faucillon_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article faucillon / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :faucillon_sense1_lexConcept .
+
+:faucillon_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "instrument formé d’une étroite lame d’acier lisse ou dentelée, courbée en demi-cercle, montée sur une poignée et qui sert à couper l’herbe, les céréales, etc."@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :faucillon_sense1 .
+
+:faucille a ontolex:LexicalEntry,
+        ontolex:Word ;
+    lemonety:etymology deaf:faucille_etymology ;
+    ontolex:canonicalForm :faucille_form_faucille ;
+    ontolex:evokes :faucille_sense1_lexConcept ;
+    ontolex:otherForm :faucille_form_facile,
+        :faucille_form_facille,
+        :faucille_form_falcille,
+        :faucille_form_fauchille,
+        :faucille_form_faucihle,
+        :faucille_form_faucile,
+        :faucille_form_fausille,
+        :faucille_form_fucile ;
+    ontolex:sense :faucille_sense1 ;
+    lexinfo:gender lexinfo:feminine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "f."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/faucille#faucil> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    lemonety:etymology deaf:faucil_etymology ;
+    ontolex:canonicalForm :faucil_form_faucil ;
+    ontolex:evokes :faucil_sense1_lexConcept ;
+    ontolex:otherForm :faucil_form_facil ;
+    ontolex:sense :faucil_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .

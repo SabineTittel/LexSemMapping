@@ -1,0 +1,1035 @@
+@prefix : <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dbr: <https://dbpedia.org/resource/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix deaf: <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexicog: <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix lexinfo: <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix lexvo: <http://lexvo.org/id/iso639-3/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix olia: <http://purl.org/olia/olia.owl#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semshift: <http://www.deaf-page.de/ns/semshift#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+deaf:DEAF a lime:Lexicon,
+        ontolex:Lexicon ;
+    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:creator [ foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ;
+            foaf:name "Sabine Tittel"@de ] ;
+    dct:date "2021-10-14"^^xsd:date ;
+    dct:publisher [ foaf:familyName "Tittel"@de ;
+            foaf:givenName "Sabine"@de ;
+            foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ] ;
+    dct:rights "CC-Zero" ;
+    lime:entry :fiel,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#desfieler>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#enfieler>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fielee>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fieler>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#renfieler> ;
+    lime:language lexvo:fro .
+
+deaf:DEAF_lexresource a lexicog:LexicographicResource ;
+    dct:language lexvo:fro ;
+    lexicog:entry deaf:fiel_entry .
+
+deaf:Erdgalle_de a ontolex:LexicalEntry ;
+    rdfs:label "Erdgalle"@de ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:deu,
+        <https://id.loc.gov/vocabulary/iso639-1/de.html>,
+        "allemand"@fr .
+
+deaf:borsa_del_fiele_it a ontolex:LexicalEntry ;
+    rdfs:label "borsa del fiele"@it ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:borsa_it a ontolex:LexicalEntry ;
+    rdfs:label "borsa"@it ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:borsetta_del_fiele_it a ontolex:LexicalEntry ;
+    rdfs:label "borsetta del fiele"@it ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:cholericis_la a ontolex:LexicalEntry ;
+    rdfs:label "cholericis"@la ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+deaf:cistifellea_it a ontolex:LexicalEntry ;
+    rdfs:label "cistifellea"@it ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:cystis_fellis_mlt a ontolex:LexicalEntry ;
+    rdfs:label "cystis fellis"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:fallera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "fallera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:feil_eng a ontolex:LexicalEntry ;
+    rdfs:label "feil"@unassigned ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:unassigned,
+        "engadinois"@fr .
+
+deaf:fel_ca a ontolex:LexicalEntry ;
+    rdfs:label "fel"@ca ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:cat,
+        <https://id.loc.gov/vocabulary/iso639-1/ca.html>,
+        "catalan"@fr .
+
+deaf:fel_oc a ontolex:LexicalEntry ;
+    rdfs:label "fel"@oc ;
+    lemonety:isCognateOf :fiel ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/oc.html>,
+        lexvo:oci,
+        "occitan"@fr .
+
+deaf:fel_pt a ontolex:LexicalEntry ;
+    rdfs:label "fel"@por ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:por,
+        <https://id.loc.gov/vocabulary/iso639-1/pt.html>,
+        "portugais"@fr .
+
+deaf:fel_sursilv a ontolex:LexicalEntry ;
+    rdfs:label "fel"@unassigned ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:unassigned,
+        "sursilvain"@fr .
+
+deaf:fel_taurinum_la a ontolex:LexicalEntry ;
+    rdfs:label "fel taurinum"@la ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+deaf:fel_terrae_la a ontolex:LexicalEntry ;
+    rdfs:label "fel terrae"@la ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+deaf:felera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "felera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:felle_enm a ontolex:LexicalEntry ;
+    rdfs:label "fel(le)"@enm ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:fellera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "fellera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:fello_anglolt a ontolex:LexicalEntry ;
+    rdfs:label "fello"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> ;
+    dct:language lexvo:unassigned,
+        "anglo-latin"@fr .
+
+deaf:felon_enm a ontolex:LexicalEntry ;
+    rdfs:label "felon"@enm ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:feloun_enm a ontolex:LexicalEntry ;
+    rdfs:label "feloun"@enm ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:feu_gasc a ontolex:LexicalEntry ;
+    rdfs:label "feu"@oc-x-02q35735 ;
+    lemonety:isCognateOf :fiel ;
+    dct:language "gascon"@fr .
+
+deaf:fiel_lld a ontolex:LexicalEntry ;
+    rdfs:label "fiel"@lld ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:lld,
+        "ladin"@fr .
+
+deaf:fiele_di_terra_it a ontolex:LexicalEntry ;
+    rdfs:label "fiele di terra"@it ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:fiele_it a ontolex:LexicalEntry ;
+    rdfs:label "fiele"@it ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:fiere_ro a ontolex:LexicalEntry ;
+    rdfs:label "fiere"@ro ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:ron,
+        <https://id.loc.gov/vocabulary/iso639-1/ro.html>,
+        "roumain"@fr .
+
+deaf:filera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "filera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:fillera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "fillera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:fè_lld a ontolex:LexicalEntry ;
+    rdfs:label "fè"@lld ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:lld,
+        "ladin"@fr .
+
+deaf:fél_dé_terro_lang a ontolex:LexicalEntry ;
+    rdfs:label "fél dé terro"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fiel> ;
+    dct:language lexvo:unassigned,
+        "languedocien"@fr .
+
+deaf:fêl_fur a ontolex:LexicalEntry ;
+    rdfs:label "fêl"@fur ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:fur,
+        "frioulan"@fr .
+
+deaf:fîl_fur a ontolex:LexicalEntry ;
+    rdfs:label "fîl"@fur ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:fur,
+        "frioulan"@fr .
+
+deaf:gutta_felera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "gutta felera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:gutta_filera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "gutta filera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:gutta_philera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "gutta philera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:heu_gasc a ontolex:LexicalEntry ;
+    rdfs:label "heu"@oc-x-02q35735 ;
+    lemonety:isCognateOf :fiel ;
+    dct:language "gascon"@fr .
+
+deaf:hiel_es a ontolex:LexicalEntry ;
+    rdfs:label "hiel"@es ;
+    lemonety:isCognateOf :fiel ;
+    dct:language lexvo:spa,
+        <https://id.loc.gov/vocabulary/iso639-1/es.html>,
+        "espagnol"@fr .
+
+deaf:idem a rdf:Property .
+
+deaf:phalera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "phalera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:phylera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "phylera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:phyllera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "phyllera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+deaf:silera_mlt a ontolex:LexicalEntry ;
+    rdfs:label "silera"@unassigned ;
+    lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    dct:language lexvo:unassigned,
+        "moyen latin"@fr .
+
+:asterisk_gote_silere a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "*gote silere"@fro ;
+    decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    ontolex:canonicalForm :asterisk_gote_silere_form ;
+    ontolex:evokes :feliere_sense1.a_lexConcept ;
+    ontolex:sense :feliere_sense1.a ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:bourse_du_fiel a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "bourse du fiel"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :bourse_du_fiel_form ;
+    ontolex:evokes :fiel_sense1.g_lexConcept ;
+    ontolex:sense :fiel_sense1.g ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:de_fiel_abevrer a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "de fiel abevrer"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :de_fiel_abevrer_form ;
+    ontolex:evokes :fiel_sense1.e_lexConcept ;
+    ontolex:sense :fiel_sense1.e ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:doner_a_boire_aigue_de_fiel a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "doner a boire aigue de fiel"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :doner_a_boire_aigue_de_fiel_form ;
+    ontolex:evokes :fiel_sense1.e_lexConcept ;
+    ontolex:sense :fiel_sense1.e ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:doner_en_ma_viande_fiel a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "doner en ma viande fiel"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :doner_en_ma_viande_fiel_form ;
+    ontolex:evokes :fiel_sense1.e_lexConcept ;
+    ontolex:sense :fiel_sense1.e ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:felon_enfossé a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "felon enfossé"@fro ;
+    decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> ;
+    ontolex:canonicalForm :felon_enfossé_form ;
+    ontolex:evokes :felon_sense1.b_lexConcept ;
+    ontolex:sense :felon_sense1.b ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "loc. subst."@fr,
+        "locution nominale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:fiel_de_la_terre a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "fiel de la terre"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :fiel_de_la_terre_form ;
+    ontolex:evokes :fiel_sense1.h_lexConcept ;
+    ontolex:sense :fiel_sense1.h ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:fiel_de_terre a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "fiel de terre"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :fiel_de_terre_form ;
+    ontolex:evokes :fiel_sense1.h_lexConcept ;
+    ontolex:sense :fiel_sense1.h ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:fiel_de_tor a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "fiel de tor"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :fiel_de_tor_form ;
+    ontolex:evokes :fiel_sense1.c_lexConcept ;
+    ontolex:sense :fiel_sense1.c ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:fiel_de_torel a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "fiel de torel"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :fiel_de_torel_form ;
+    ontolex:evokes :fiel_sense1.c_lexConcept ;
+    ontolex:sense :fiel_sense1.c ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:fiel_noir a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "fiel noir"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :fiel_noir_form ;
+    ontolex:evokes :fiel_sense1.f_lexConcept ;
+    ontolex:sense :fiel_sense1.f ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:gote_filere a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "gote filere"@fro ;
+    decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> ;
+    ontolex:canonicalForm :gote_filere_form ;
+    ontolex:evokes :feliere_sense1.a_lexConcept ;
+    ontolex:sense :feliere_sense1.a ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:huche_de_fiel a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "huche de fiel"@fro ;
+    decomp:subterm :fiel ;
+    ontolex:canonicalForm :huche_de_fiel_form ;
+    ontolex:evokes :fiel_sense1.g_lexConcept ;
+    ontolex:sense :fiel_sense1.g ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:noir_felon a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "noir felon"@fro ;
+    decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> ;
+    ontolex:canonicalForm :noir_felon_form ;
+    ontolex:evokes :felon_sense1.a_lexConcept ;
+    ontolex:sense :felon_sense1.a ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "loc. subst."@fr,
+        "locution nominale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+deaf:desfieler_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#desfieler> .
+
+deaf:enfieler_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#enfieler> .
+
+deaf:fel_etymon a lemonety:Etymon ;
+    rdfs:label "fel"@la ;
+    lemonety:isEtymologyOf deaf:fiel_etymology ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+deaf:feliere_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> .
+
+deaf:felon_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> .
+
+deaf:fiel_entity a lexicog:LexicographicComponent ;
+    lexicog:describes :fiel .
+
+deaf:fiel_entry a lexicog:Entry ;
+    rdfs:member deaf:desfieler_entity,
+        deaf:enfieler_entity,
+        deaf:feliere_entity,
+        deaf:felon_entity,
+        deaf:fiel_entity,
+        deaf:fielee_entity,
+        deaf:fieler_entity,
+        deaf:renfieler_entity .
+
+deaf:fielee_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fielee> .
+
+deaf:fieler_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fieler> .
+
+deaf:renfieler_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#renfieler> .
+
+:asterisk_gote_silere_form a ontolex:Form ;
+    ontolex:writtenRep "*gote silere"@fro .
+
+:bourse_du_fiel_form a ontolex:Form ;
+    ontolex:writtenRep "bourse du fiel"@fro .
+
+:de_fiel_abevrer_form a ontolex:Form ;
+    ontolex:writtenRep "de fiel abevrer"@fro .
+
+:desfieler_form_deffieller a ontolex:Form ;
+    ontolex:writtenRep "deffieller"@unassigned .
+
+:doner_a_boire_aigue_de_fiel_form a ontolex:Form ;
+    ontolex:writtenRep "doner a boire aigue de fiel"@fro .
+
+:doner_en_ma_viande_fiel_form a ontolex:Form ;
+    ontolex:writtenRep "doner en ma viande fiel"@fro .
+
+:enfieler_form_enfieler a ontolex:Form ;
+    ontolex:writtenRep "enfieler"@fro .
+
+:enfieler_form_enfieller a ontolex:Form ;
+    ontolex:writtenRep "enfieller"@unassigned .
+
+:enfieler_form_enfilier a ontolex:Form ;
+    ontolex:writtenRep "enfilier"@unassigned .
+
+:feliere_form_felere a ontolex:Form ;
+    ontolex:writtenRep "felere"@xno .
+
+:feliere_form_feliere a ontolex:Form ;
+    ontolex:writtenRep "feliere"@fro .
+
+:feliere_form_filere a ontolex:Form ;
+    ontolex:writtenRep "filere"@unassigned .
+
+:feliere_form_filiere a ontolex:Form ;
+    ontolex:writtenRep "filiere"@unassigned,
+        "filiere"@xno .
+
+:felon_enfossé_form a ontolex:Form ;
+    ontolex:writtenRep "felon enfossé"@fro .
+
+:felon_form_felon a ontolex:Form ;
+    ontolex:writtenRep "felon"@fro .
+
+:felon_form_feloun a ontolex:Form ;
+    ontolex:writtenRep "feloun"@xno .
+
+:felon_form_felun a ontolex:Form ;
+    ontolex:writtenRep "felun"@xno .
+
+:felon_form_fulun a ontolex:Form ;
+    ontolex:writtenRep "fulun"@xno .
+
+:fiel_de_la_terre_form a ontolex:Form ;
+    ontolex:writtenRep "fiel de la terre"@fro .
+
+:fiel_de_terre_form a ontolex:Form ;
+    ontolex:writtenRep "fiel de terre"@fro .
+
+:fiel_de_tor_form a ontolex:Form ;
+    ontolex:writtenRep "fiel de tor"@fro .
+
+:fiel_de_torel_form a ontolex:Form ;
+    ontolex:writtenRep "fiel de torel"@fro .
+
+:fiel_form_feel a ontolex:Form ;
+    ontolex:writtenRep "feel"@fro .
+
+:fiel_form_feil a ontolex:Form ;
+    ontolex:writtenRep "feil"@fro .
+
+:fiel_form_fel a ontolex:Form ;
+    ontolex:writtenRep "fel"@fro .
+
+:fiel_form_fele a ontolex:Form ;
+    ontolex:writtenRep "fele"@fro .
+
+:fiel_form_fieil a ontolex:Form ;
+    ontolex:writtenRep "fieil"@fro .
+
+:fiel_form_fiel a ontolex:Form ;
+    ontolex:writtenRep "fiel"@fro .
+
+:fiel_form_fius a ontolex:Form ;
+    ontolex:writtenRep "fius"@fro .
+
+:fiel_noir_form a ontolex:Form ;
+    ontolex:writtenRep "fiel noir"@fro .
+
+:fielee_form_felee a ontolex:Form ;
+    ontolex:writtenRep "felee"@frm .
+
+:fielee_form_fielee a ontolex:Form ;
+    ontolex:writtenRep "fielee"@unassigned .
+
+:fielee_form_fiellee a ontolex:Form ;
+    ontolex:writtenRep "fiellee"@frm .
+
+:fieler_form_fieler a ontolex:Form ;
+    ontolex:writtenRep "fieler"@fro .
+
+:gote_filere_form a ontolex:Form ;
+    ontolex:writtenRep "gote filere"@fro .
+
+:huche_de_fiel_form a ontolex:Form ;
+    ontolex:writtenRep "huche de fiel"@fro .
+
+:noir_felon_form a ontolex:Form ;
+    ontolex:writtenRep "noir felon"@fro .
+
+:renfieler_form_renfieler a ontolex:Form ;
+    ontolex:writtenRep "renfieler"@fro .
+
+deaf:fiel_etymology a lemonety:Etymology ;
+    lemonety:etymology deaf:fel_etymon .
+
+:desfieler_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article desfieler / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :desfieler_sense1_lexConcept .
+
+:desfieler_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "décharger le cœur du sentiment d’amertume"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :desfieler_sense1 .
+
+:enfieler_sense1.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article enfieler / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :enfieler_sense1.a_lexConcept .
+
+:enfieler_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "qui est plein de fiel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :enfieler_sense1.a .
+
+:enfieler_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "remplir de fiel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :enfieler_sense1 .
+
+:feliere_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Falconry ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article feliere / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :feliere_sense1_lexConcept .
+
+:feliere_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "maladie des rapaces dont les effets ressemblent à ceux de l’ictère et qui est supposée être en relation avec la bile"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :feliere_sense1 .
+
+:felon_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article felon / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :felon_sense1_lexConcept .
+
+:felon_sense1.a a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article felon / sub sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :felon_sense1.a_lexConcept .
+
+:felon_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "sorte de tumeur de couleur noire"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Tumor> ;
+    ontolex:lexicalizedSense :felon_sense1.a .
+
+:felon_sense1.b a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article felon / sub sense number 1.b"@en ;
+    ontolex:isLexicalizedSenseOf :felon_sense1.b_lexConcept .
+
+:felon_sense1.b_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "sorte de tumeur qui présente une concavité"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Tumor> ;
+    ontolex:lexicalizedSense :felon_sense1.b .
+
+:felon_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "gonflement pathologique d’un tissu ou d’un organe, sorte de tumeur"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Tumor> ;
+    ontolex:lexicalizedSense :felon_sense1 .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#desfieler> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    rdfs:comment "developed form"@en ;
+    ontolex:evokes :desfieler_sense1_lexConcept ;
+    ontolex:otherForm :desfieler_form_deffieller ;
+    ontolex:sense :desfieler_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:TransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.tr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#enfieler> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :enfieler_form_enfieler ;
+    ontolex:evokes :enfieler_sense1.a_lexConcept,
+        :enfieler_sense1_lexConcept ;
+    ontolex:otherForm :enfieler_form_enfieller,
+        :enfieler_form_enfilier ;
+    ontolex:sense :enfieler_sense1,
+        :enfieler_sense1.a ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:TransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.tr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fielee> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :fielee_form_fielee ;
+    ontolex:evokes :fielee_sense1.a_lexConcept,
+        :fielee_sense1_lexConcept,
+        :fielee_sense2.a_lexConcept,
+        :fielee_sense2_lexConcept,
+        :fielee_sense3_lexConcept ;
+    ontolex:otherForm :fielee_form_felee,
+        :fielee_form_fiellee ;
+    ontolex:sense :fielee_sense1,
+        :fielee_sense1.a,
+        :fielee_sense2,
+        :fielee_sense2.a,
+        :fielee_sense3 ;
+    lexinfo:gender lexinfo:feminine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "f."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#fieler> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :fieler_form_fieler ;
+    ontolex:evokes :fieler_sense1_lexConcept ;
+    ontolex:sense :fieler_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:TransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.tr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#renfieler> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :renfieler_form_renfieler ;
+    ontolex:evokes :renfieler_sense1_lexConcept ;
+    ontolex:sense :renfieler_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:TransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.tr."@fr .
+
+:fiel_sense1.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fiel / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.a_lexConcept .
+
+:fiel_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "liquide verdâtre et amer qui est contenu dans la vésicule biliaire, bile"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Bile> ;
+    ontolex:lexicalizedSense :fiel_sense1.a ;
+    deaf:idem "“id., des animaux”"@fr .
+
+:fiel_sense1.b a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fiel / main sense number 1.b"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.b_lexConcept .
+
+:fiel_sense1.b_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "liquide verdâtre et amer qui est contenu dans la vésicule biliaire, bile"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Bile> ;
+    ontolex:lexicalizedSense :fiel_sense1.b ;
+    deaf:idem "“id., des animaux de boucherie, de la volaille, de la pêche”"@fr .
+
+:fiel_sense1.d a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:MetaphoricalSimilarity ;
+    semshift:metaphor :fiel_sense1 ;
+    rdfs:comment "DEAF article fiel / main sense number 1.d"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.d_lexConcept ;
+    ontolex:usage dbr:Metaphor .
+
+:fiel_sense1.d_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "liquide verdâtre et amer qui est contenu dans la vésicule biliaire, bile"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Bile> ;
+    ontolex:lexicalizedSense :fiel_sense1.d .
+
+:fiel_sense1.f a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article fiel / sub sense number 1.f"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.f_lexConcept .
+
+:fiel_sense1.f_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "dans l’humorisme, celle des quatre humeurs cardinales qui est sécrétée par la rate, qui a les qualités ‘froid’ et ‘sec’ et qui gouverne la mélancolie dans le corps, bile noire"@fr ;
+    ontolex:isConceptOf "missing english equivalent to French wikipedia entry" ;
+    ontolex:lexicalizedSense :fiel_sense1.f .
+
+:fiel_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "liquide verdâtre et amer qui est contenu dans la vésicule biliaire, bile"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Bile> ;
+    ontolex:lexicalizedSense :fiel_sense1 .
+
+:fiel_sense2 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article fiel / main sense number 2"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense2_lexConcept .
+
+:fiel_sense2.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fiel / main sense number 2.a"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense2.a_lexConcept .
+
+:fiel_sense2.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "réservoir musculo-membraneux, situé à la face antérieure du foie et qui emmagasine la bile, vésicule biliaire"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Gallbladder> ;
+    ontolex:lexicalizedSense :fiel_sense2.a ;
+    deaf:idem "“id., des animaux”"@fr .
+
+:fiel_sense2_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "réservoir musculo-membraneux, situé à la face antérieure du foie et qui emmagasine la bile, vésicule biliaire"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Gallbladder> ;
+    ontolex:lexicalizedSense :fiel_sense2 .
+
+:fiel_sense3.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fiel / main sense number 3.a"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense3.a_lexConcept .
+
+:fiel_sense3.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "sentiment de tristesse accompagné de mauvaise humeur et qui est lié à une humiliation, une déception, une injustice ou sim., amertume"@fr ;
+    ontolex:isConceptOf "missing english equivalent to French wikipedia entry" ;
+    ontolex:lexicalizedSense :fiel_sense3.a ;
+    deaf:idem "“id.”, avec la colombe comme référence"@fr .
+
+:fiel_sense3_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "sentiment de tristesse accompagné de mauvaise humeur et qui est lié à une humiliation, une déception, une injustice ou sim., amertume"@fr ;
+    ontolex:isConceptOf "missing english equivalent to French wikipedia entry" ;
+    ontolex:lexicalizedSense :fiel_sense3 .
+
+:fielee_sense1.a a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:MetaphoricalSimilarity ;
+    semshift:metaphor :fielee_sense1 ;
+    rdfs:comment "DEAF article fielee / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :fielee_sense1.a_lexConcept ;
+    ontolex:usage dbr:Metaphor .
+
+:fielee_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "substance amère"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fielee_sense1.a .
+
+:fielee_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "liquide verdâtre et amer qui est contenu dans la vésicule biliaire, bile"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Bile> ;
+    ontolex:lexicalizedSense :fielee_sense1 .
+
+:fielee_sense2.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fielee / main sense number 2.a"@en ;
+    ontolex:isLexicalizedSenseOf :fielee_sense2.a_lexConcept .
+
+:fielee_sense2.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "sentiment de tristesse accompagné de mauvaise humeur et qui est lié à une humiliation, une déception, une injustice ou sim., amertume"@fr ;
+    ontolex:isConceptOf "missing english equivalent to French wikipedia entry" ;
+    ontolex:lexicalizedSense :fielee_sense2.a ;
+    deaf:idem "“id.”, avec la colombe comme référence"@fr .
+
+:fielee_sense2_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "sentiment de tristesse accompagné de mauvaise humeur et qui est lié à une humiliation, une déception, une injustice ou sim., amertume"@fr ;
+    ontolex:isConceptOf "missing english equivalent to French wikipedia entry" ;
+    ontolex:lexicalizedSense :fielee_sense2 .
+
+:fielee_sense3 a ontolex:LexicalSense ;
+    dct:subject dbr:Falconry ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article fielee / main sense number 3"@en ;
+    ontolex:isLexicalizedSenseOf :fielee_sense3_lexConcept .
+
+:fielee_sense3_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "maladie des rapaces qui est supposée être en relation avec la bile"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fielee_sense3 .
+
+:fieler_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "qui est plein de fiel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fieler_sense1 .
+
+:renfieler_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "remplir (de nouveau) de fiel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :renfieler_sense1 .
+
+:fiel_sense1.c a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fiel / sub sense number 1.c"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.c_lexConcept .
+
+:fiel_sense1.c_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "liquide verdâtre et amer qui est contenu dans la vésicule biliaire, bile"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Bile> ;
+    ontolex:lexicalizedSense :fiel_sense1.c ;
+    deaf:idem "“id., du taureau”"@fr .
+
+:fiel_sense1.g a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article fiel / sub sense number 1.g"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.g_lexConcept .
+
+:fiel_sense1.g_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "réservoir musculo-membraneux, situé à la face antérieure du foie et qui emmagasine la bile, vésicule biliaire"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Gallbladder> ;
+    ontolex:lexicalizedSense :fiel_sense1.g .
+
+:fiel_sense1.h a ontolex:LexicalSense ;
+    dct:subject dbr:Botany ;
+    olia:hasRegister olia:TechnicalRegister ;
+    semshift:associateRelation semshift:ConceptualContiguity ;
+    semshift:metonymy :fiel_sense1 ;
+    rdfs:comment "DEAF article fiel / sub sense number 1.h"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.h_lexConcept ;
+    ontolex:usage dbr:Metonymy .
+
+:fiel_sense1.h_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "plante herbacée annuelle ou bisannuelle de la famille des Gentianacées aux fleurs roses, mesurant jusqu’à 50 cm de grandeur, qui pousse dans les pâturages humides, dont la tige, les fleurs et les feuilles séchées contiennent des substances amères, petite centaurée (Centaurium erythraea L.)"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Centaurium_erythraea> ;
+    ontolex:lexicalizedSense :fiel_sense1.h .
+
+:fiel_sense3 a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:MetaphoricalSimilarity ;
+    semshift:metaphor :fiel_sense3 ;
+    rdfs:comment "DEAF article fiel / main sense number 3"@en,
+        "usage: annotation in top level of semantic structure"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense3_lexConcept ;
+    ontolex:usage dbr:Metaphor .
+
+:fielee_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fielee / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :fielee_sense1_lexConcept .
+
+:fielee_sense2 a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:MetaphoricalSimilarity ;
+    semshift:metaphor :fielee_sense2 ;
+    rdfs:comment "DEAF article fielee / main sense number 2"@en,
+        "usage: annotation in top level of semantic structure"@en ;
+    ontolex:isLexicalizedSenseOf :fielee_sense2_lexConcept ;
+    ontolex:usage dbr:Metaphor .
+
+:fieler_sense1 a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:MetaphoricalSimilarity ;
+    semshift:image :fieler_sense1 ;
+    rdfs:comment "DEAF article fieler / main sense number 1"@en,
+        "usage: annotation in top level of semantic structure"@en ;
+    ontolex:isLexicalizedSenseOf :fieler_sense1_lexConcept ;
+    ontolex:usage <https://dbpedia.org/page/Trope_(literature)> .
+
+:renfieler_sense1 a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:MetaphoricalSimilarity ;
+    semshift:image :renfieler_sense1 ;
+    rdfs:comment "DEAF article renfieler / main sense number 1"@en,
+        "usage: annotation in top level of semantic structure"@en ;
+    ontolex:isLexicalizedSenseOf :renfieler_sense1_lexConcept ;
+    ontolex:usage <https://dbpedia.org/page/Trope_(literature)> .
+
+:enfieler_sense1 a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:MetaphoricalSimilarity ;
+    semshift:image :enfieler_sense1 ;
+    semshift:metaphor :enfieler_sense1 ;
+    rdfs:comment "DEAF article enfieler / main sense number 1"@en,
+        "usage: annotation in top level of semantic structure"@en ;
+    ontolex:isLexicalizedSenseOf :enfieler_sense1_lexConcept ;
+    ontolex:usage <https://dbpedia.org/page/Trope_(literature)>,
+        dbr:Metaphor .
+
+:feliere_sense1.a a ontolex:LexicalSense ;
+    dct:subject dbr:Falconry ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article feliere / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :feliere_sense1.a_lexConcept .
+
+:feliere_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "maladie des rapaces dont les effets ressemblent à ceux de l’ictère et qui est supposée être en relation avec la bile"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :feliere_sense1.a ;
+    deaf:idem "“id.”"@fr .
+
+:fiel_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article fiel / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1_lexConcept .
+
+:fiel_sense1.e a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fiel / main sense number 1.e"@en,
+        "DEAF article fiel / sub sense number 1.e"@en ;
+    ontolex:isLexicalizedSenseOf :fiel_sense1.e_lexConcept .
+
+:fiel_sense1.e_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "infliger une humiliation"@fr,
+        "liquide verdâtre et amer qui est contenu dans la vésicule biliaire, bile"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Bile>,
+        "to be mapped" ;
+    ontolex:lexicalizedSense :fiel_sense1.e ;
+    deaf:idem "“id.”, dans une expression figurée de l’Ancien Testament  doner en ma viande fiel ++/++ doner a boire aigue de fiel  et sim. et dans des expressions analogues du Nouveau Testament  de fiel abevrer  et sim."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#felon> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :felon_form_felon ;
+    ontolex:evokes :felon_sense1_lexConcept ;
+    ontolex:otherForm :felon_form_feloun,
+        :felon_form_felun,
+        :felon_form_fulun ;
+    ontolex:sense :felon_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fiel#feliere> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :feliere_form_feliere ;
+    ontolex:evokes :feliere_sense1.a_lexConcept,
+        :feliere_sense1_lexConcept ;
+    ontolex:otherForm :feliere_form_felere,
+        :feliere_form_filere,
+        :feliere_form_filiere ;
+    ontolex:sense :feliere_sense1,
+        :feliere_sense1.a ;
+    lexinfo:gender lexinfo:feminine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "f."@fr .
+
+:fiel a ontolex:LexicalEntry,
+        ontolex:Word ;
+    lemonety:etymology deaf:fiel_etymology ;
+    ontolex:canonicalForm :fiel_form_fiel ;
+    ontolex:evokes :fiel_sense1.a_lexConcept,
+        :fiel_sense1.b_lexConcept,
+        :fiel_sense1.d_lexConcept,
+        :fiel_sense1.e_lexConcept,
+        :fiel_sense1_lexConcept,
+        :fiel_sense2.a_lexConcept,
+        :fiel_sense2_lexConcept,
+        :fiel_sense3.a_lexConcept,
+        :fiel_sense3_lexConcept ;
+    ontolex:otherForm :fiel_form_feel,
+        :fiel_form_feil,
+        :fiel_form_fel,
+        :fiel_form_fele,
+        :fiel_form_fieil,
+        :fiel_form_fius ;
+    ontolex:sense :fiel_sense1,
+        :fiel_sense1.a,
+        :fiel_sense1.b,
+        :fiel_sense1.d,
+        :fiel_sense1.e,
+        :fiel_sense2,
+        :fiel_sense2.a,
+        :fiel_sense3,
+        :fiel_sense3.a ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .

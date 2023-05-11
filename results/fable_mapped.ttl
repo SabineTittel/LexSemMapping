@@ -1,0 +1,629 @@
+@prefix : <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix deaf: <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexicog: <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix lexinfo: <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix lexvo: <http://lexvo.org/id/iso639-3/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+deaf:DEAF a lime:Lexicon,
+        ontolex:Lexicon ;
+    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:creator [ foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ;
+            foaf:name "Thomas Städtler"@de ] ;
+    dct:date "2021-10-14"^^xsd:date ;
+    dct:publisher [ foaf:familyName "Tittel"@de ;
+            foaf:givenName "Sabine"@de ;
+            foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ] ;
+    dct:rights "CC-Zero" ;
+    lime:entry :fable,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#afablir>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fabelet>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fablel>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fablet> ;
+    lime:language lexvo:fro .
+
+deaf:DEAF_lexresource a lexicog:LexicographicResource ;
+    dct:language lexvo:fro ;
+    lexicog:entry deaf:fable_entry .
+
+deaf:fabla_oc a ontolex:LexicalEntry ;
+    rdfs:label "fabla"@oc ;
+    lemonety:isCognateOf :fable ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/oc.html>,
+        lexvo:oci,
+        "occitan"@fr .
+
+deaf:faula_ca a ontolex:LexicalEntry ;
+    rdfs:label "faula"@ca ;
+    lemonety:isCognateOf :fable ;
+    dct:language lexvo:cat,
+        <https://id.loc.gov/vocabulary/iso639-1/ca.html>,
+        "catalan"@fr .
+
+deaf:faula_oc a ontolex:LexicalEntry ;
+    rdfs:label "faula"@oc ;
+    lemonety:isCognateOf :fable ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/oc.html>,
+        lexvo:oci,
+        "occitan"@fr .
+
+deaf:favola_it a ontolex:LexicalEntry ;
+    rdfs:label "favola"@it ;
+    lemonety:isCognateOf :fable ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:fiaba_it a ontolex:LexicalEntry ;
+    rdfs:label "fiaba"@it ;
+    lemonety:isCognateOf :fable ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:fola_it a ontolex:LexicalEntry ;
+    rdfs:label "fola"@it ;
+    lemonety:isCognateOf :fable ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:fábula_es a ontolex:LexicalEntry ;
+    rdfs:label "fábula"@es ;
+    lemonety:isCognateOf :fable ;
+    dct:language lexvo:spa,
+        <https://id.loc.gov/vocabulary/iso639-1/es.html>,
+        "espagnol"@fr .
+
+deaf:idem a rdf:Property .
+
+:en_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "en fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :en_fable_form ;
+    ontolex:evokes :fable_sense1.f_lexConcept ;
+    ontolex:sense :fable_sense1.f ;
+    lexinfo:partOfSpeech lexinfo:Adverb,
+        "loc. adv."@fr,
+        "locution adverbiale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:entrer_en_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "entrer en fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :entrer_en_fable_form ;
+    ontolex:evokes :fable_sense2.a_lexConcept ;
+    ontolex:sense :fable_sense2.a ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:faire_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "faire fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :faire_fable_form ;
+    ontolex:evokes :fable_sense2.b_lexConcept ;
+    ontolex:sense :fable_sense2.b ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:ne_mie_estre_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "ne mie estre fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :ne_mie_estre_fable_form ;
+    ontolex:evokes :fable_sense1.j_lexConcept ;
+    ontolex:sense :fable_sense1.j ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:ne_pas_estre_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "ne pas estre fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :ne_pas_estre_fable_form ;
+    ontolex:evokes :fable_sense1.j_lexConcept ;
+    ontolex:sense :fable_sense1.j ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:ne_point_estre_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "ne point estre fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :ne_point_estre_fable_form ;
+    ontolex:evokes :fable_sense1.j_lexConcept ;
+    ontolex:sense :fable_sense1.j ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:sans_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "sans fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :sans_fable_form ;
+    ontolex:evokes :fable_sense1.g_lexConcept ;
+    ontolex:sense :fable_sense1.g ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:sans_mot_de_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "sans mot de fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :sans_mot_de_fable_form ;
+    ontolex:evokes :fable_sense1.h_lexConcept ;
+    ontolex:sense :fable_sense1.h ;
+    lexinfo:partOfSpeech lexinfo:Adverb,
+        "loc. adv."@fr,
+        "locution adverbiale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:sans_nule_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "sans nule fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :sans_nule_fable_form ;
+    ontolex:evokes :fable_sense1.g_lexConcept ;
+    ontolex:sense :fable_sense1.g ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:tenir_a_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "tenir a fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :tenir_a_fable_form ;
+    ontolex:evokes :fable_sense1.i_lexConcept ;
+    ontolex:sense :fable_sense1.i ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:tenir_longue_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "tenir longue fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :tenir_longue_fable_form ;
+    ontolex:evokes :fable_sense2.c_lexConcept ;
+    ontolex:sense :fable_sense2.c ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+:torner_a_fable a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "torner a fable"@fro ;
+    decomp:subterm :fable ;
+    ontolex:canonicalForm :torner_a_fable_form ;
+    ontolex:evokes :fable_sense1.k_lexConcept ;
+    ontolex:sense :fable_sense1.k ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "loc. verb."@fr,
+        "locution verbale"@fr ;
+    lexinfo:termType lexinfo:phraseologicalUnit .
+
+deaf:afablir_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#afablir> .
+
+deaf:fabelet_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fabelet> .
+
+deaf:fable_entity a lexicog:LexicographicComponent ;
+    lexicog:describes :fable .
+
+deaf:fable_entry a lexicog:Entry ;
+    rdfs:member deaf:afablir_entity,
+        deaf:fabelet_entity,
+        deaf:fable_entity,
+        deaf:fablel_entity,
+        deaf:fablet_entity .
+
+deaf:fablel_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fablel> .
+
+deaf:fablet_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fablet> .
+
+deaf:fābula_etymon a lemonety:Etymon ;
+    rdfs:label "fābula"@la ;
+    lemonety:isEtymologyOf deaf:fable_etymology ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+:afablir_form_afablir a ontolex:Form ;
+    ontolex:writtenRep "afablir"@fro .
+
+:afablir_form_affablir a ontolex:Form ;
+    ontolex:writtenRep "affablir"@fro .
+
+:en_fable_form a ontolex:Form ;
+    ontolex:writtenRep "en fable"@fro .
+
+:entrer_en_fable_form a ontolex:Form ;
+    ontolex:writtenRep "entrer en fable"@fro .
+
+:fabelet_form_fabelet a ontolex:Form ;
+    ontolex:writtenRep "fabelet"@fro .
+
+:fable_form_fable a ontolex:Form ;
+    ontolex:writtenRep "fable"@fro .
+
+:fable_form_fauble a ontolex:Form ;
+    ontolex:writtenRep "fauble"@fro .
+
+:fable_form_faule a ontolex:Form ;
+    ontolex:writtenRep "faule"@fro .
+
+:fable_form_fauvle a ontolex:Form ;
+    ontolex:writtenRep "fauvle"@fro .
+
+:fable_form_flabe a ontolex:Form ;
+    ontolex:writtenRep "flabe"@fro .
+
+:fable_form_flable a ontolex:Form ;
+    ontolex:writtenRep "flable"@fro .
+
+:fable_form_flambe a ontolex:Form ;
+    ontolex:writtenRep "flambe"@fro .
+
+:fable_form_flave a ontolex:Form ;
+    ontolex:writtenRep "flave"@fro .
+
+:fable_form_fole a ontolex:Form ;
+    ontolex:writtenRep "fole"@fro .
+
+:fablel_form_fablel a ontolex:Form ;
+    ontolex:writtenRep "fablel"@fro .
+
+:fablel_form_flabel a ontolex:Form ;
+    ontolex:writtenRep "flabel"@fro .
+
+:fablel_form_flablel a ontolex:Form ;
+    ontolex:writtenRep "flablel"@fro .
+
+:fablet_form_fablet a ontolex:Form ;
+    ontolex:writtenRep "fablet"@xno .
+
+:fablet_form_fablette a ontolex:Form ;
+    ontolex:writtenRep "fablette"@fro .
+
+:faire_fable_form a ontolex:Form ;
+    ontolex:writtenRep "faire fable"@fro .
+
+:ne_mie_estre_fable_form a ontolex:Form ;
+    ontolex:writtenRep "ne mie estre fable"@fro .
+
+:ne_pas_estre_fable_form a ontolex:Form ;
+    ontolex:writtenRep "ne pas estre fable"@fro .
+
+:ne_point_estre_fable_form a ontolex:Form ;
+    ontolex:writtenRep "ne point estre fable"@fro .
+
+:sans_fable_form a ontolex:Form ;
+    ontolex:writtenRep "sans fable"@fro .
+
+:sans_mot_de_fable_form a ontolex:Form ;
+    ontolex:writtenRep "sans mot de fable"@fro .
+
+:sans_nule_fable_form a ontolex:Form ;
+    ontolex:writtenRep "sans nule fable"@fro .
+
+:tenir_a_fable_form a ontolex:Form ;
+    ontolex:writtenRep "tenir a fable"@fro .
+
+:tenir_longue_fable_form a ontolex:Form ;
+    ontolex:writtenRep "tenir longue fable"@fro .
+
+:torner_a_fable_form a ontolex:Form ;
+    ontolex:writtenRep "torner a fable"@fro .
+
+deaf:fable_etymology a lemonety:Etymology ;
+    lemonety:etymology deaf:fābula_etymon .
+
+:afablir_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article afablir / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :afablir_sense1_lexConcept .
+
+:afablir_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "faire des racontars"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :afablir_sense1 .
+
+:fabelet_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fabelet / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :fabelet_sense1_lexConcept .
+
+:fabelet_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "conte populaire en vers octosyllabes au caractère satirique ou moral"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fabelet_sense1 .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fable#afablir> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :afablir_form_afablir ;
+    ontolex:evokes :afablir_sense1_lexConcept ;
+    ontolex:otherForm :afablir_form_affablir ;
+    ontolex:sense :afablir_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:IntransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.intr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fabelet> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :fabelet_form_fabelet ;
+    ontolex:evokes :fabelet_sense1_lexConcept ;
+    ontolex:sense :fabelet_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fablel> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :fablel_form_fablel ;
+    ontolex:evokes :fablel_sense1_lexConcept ;
+    ontolex:otherForm :fablel_form_flabel,
+        :fablel_form_flablel ;
+    ontolex:sense :fablel_sense1 ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fable#fablet> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :fablet_form_fablet ;
+    ontolex:evokes :fablet_sense1.a_lexConcept,
+        :fablet_sense1_lexConcept ;
+    ontolex:otherForm :fablet_form_fablette ;
+    ontolex:sense :fablet_sense1,
+        :fablet_sense1.a ;
+    lexinfo:gender lexinfo:masculine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "m."@fr .
+
+:fable_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1_lexConcept .
+
+:fable_sense1.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.a_lexConcept .
+
+:fable_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.a ;
+    deaf:idem "“id.” (en parlant d’un fabliau)"@fr .
+
+:fable_sense1.b a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 1.b"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.b_lexConcept .
+
+:fable_sense1.b_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.b ;
+    deaf:idem "“id.” (en parlant d’un conte mythologique)"@fr .
+
+:fable_sense1.c a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 1.c"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.c_lexConcept .
+
+:fable_sense1.c_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.c ;
+    deaf:idem "“id.” (en parlant d’un conte qui se veut didactique)"@fr .
+
+:fable_sense1.d a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 1.d"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.d_lexConcept .
+
+:fable_sense1.d_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.d ;
+    deaf:idem "“id.” (en parlant d’un conte allégorique dont les protagonistes sont des animaux)"@fr .
+
+:fable_sense1.e a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 1.e"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.e_lexConcept .
+
+:fable_sense1.e_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.e ;
+    deaf:idem "“id.” (en parlant d’un récit d’une amourette)"@fr .
+
+:fable_sense1.f a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 1.f"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.f_lexConcept .
+
+:fable_sense1.f_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "par plaisanterie"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.f .
+
+:fable_sense1.i a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 1.i"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.i_lexConcept .
+
+:fable_sense1.i_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "ne pas prendre au sérieux, ne pas croire"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.i .
+
+:fable_sense1.k a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 1.k"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.k_lexConcept .
+
+:fable_sense1.k_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "ne pas prendre au sérieux"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.k .
+
+:fable_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1 .
+
+:fable_sense2 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 2"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense2_lexConcept .
+
+:fable_sense2.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 2.a"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense2.a_lexConcept .
+
+:fable_sense2.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "parler avec abondance"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense2.a .
+
+:fable_sense2.b a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 2.b"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense2.b_lexConcept .
+
+:fable_sense2.b_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "parler avec abondance"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense2.b .
+
+:fable_sense2.c a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 2.c"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense2.c_lexConcept .
+
+:fable_sense2.c_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "parler avec abondance"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense2.c .
+
+:fable_sense2_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "fait de parler avec abondance"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense2 .
+
+:fable_sense3 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 3"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense3_lexConcept .
+
+:fable_sense3_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "phrase qui, sous une forme figée, exprime une expérience ou un conseil, proverbe"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Proverb> ;
+    ontolex:lexicalizedSense :fable_sense3 .
+
+:fablel_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fablel / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :fablel_sense1_lexConcept .
+
+:fablel_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "conte populaire en vers octosyllabes au caractère satirique ou moral"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fablel_sense1 .
+
+:fablet_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fablet / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :fablet_sense1_lexConcept .
+
+:fablet_sense1.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fablet / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :fablet_sense1.a_lexConcept .
+
+:fablet_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fablet_sense1.a ;
+    deaf:idem "“id.” (en parlant d’un conte allégorique dont les protagonistes sont des animaux)"@fr .
+
+:fablet_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "récit inventé plutôt que réel"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fablet_sense1 .
+
+:fable_sense1.g a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 1.g"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.g_lexConcept .
+
+:fable_sense1.g_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "assurément"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.g .
+
+:fable_sense1.h a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / main sense number 1.h"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.h_lexConcept .
+
+:fable_sense1.h_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "assurément"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.h ;
+    deaf:idem "“id.”"@fr .
+
+:fable_sense1.j a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article fable / sub sense number 1.j"@en ;
+    ontolex:isLexicalizedSenseOf :fable_sense1.j_lexConcept .
+
+:fable_sense1.j_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "être vrai"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :fable_sense1.j .
+
+:fable a ontolex:LexicalEntry,
+        ontolex:Word ;
+    lemonety:etymology deaf:fable_etymology ;
+    ontolex:canonicalForm :fable_form_fable ;
+    ontolex:evokes :fable_sense1.a_lexConcept,
+        :fable_sense1.b_lexConcept,
+        :fable_sense1.c_lexConcept,
+        :fable_sense1.d_lexConcept,
+        :fable_sense1.e_lexConcept,
+        :fable_sense1.h_lexConcept,
+        :fable_sense1_lexConcept,
+        :fable_sense2_lexConcept,
+        :fable_sense3_lexConcept ;
+    ontolex:otherForm :fable_form_fauble,
+        :fable_form_faule,
+        :fable_form_fauvle,
+        :fable_form_flabe,
+        :fable_form_flable,
+        :fable_form_flambe,
+        :fable_form_flave,
+        :fable_form_fole ;
+    ontolex:sense :fable_sense1,
+        :fable_sense1.a,
+        :fable_sense1.b,
+        :fable_sense1.c,
+        :fable_sense1.d,
+        :fable_sense1.e,
+        :fable_sense1.h,
+        :fable_sense2,
+        :fable_sense3 ;
+    lexinfo:gender lexinfo:feminine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "f."@fr .

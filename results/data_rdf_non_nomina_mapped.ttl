@@ -1,0 +1,272 @@
+@prefix dbr: <https://dbpedia.org/resource/> .
+@prefix deaf: <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://deaf-server.adw.uni-heidelberg.de#acorder#desacordé> skos:definition "celui qui est en mésintelligence avec qn"@fr ;
+    ontolex:isConceptOf "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#afable#afabilité> skos:definition "caractère de celui qui est affable"@fr ;
+    ontolex:isConceptOf "no equivalents to French wikipedia entry",
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#aigue#eweor> skos:definition "celui qui est responsable de l’eau"@fr ;
+    ontolex:isConceptOf dbr:Responsibility,
+        dbr:Water .
+
+<https://deaf-server.adw.uni-heidelberg.de#ajoindre#adjoint> skos:definition "celui qui est associé à qn comme aide"@fr ;
+    ontolex:isConceptOf dbr:Aide,
+        "no equivalents to French wikipedia entry",
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#alegre#alegrece> skos:definition "état de celui qui est allègre, joie qui se manifeste extérieurement"@fr ;
+    ontolex:isConceptOf dbr:All%C3%A8gre,
+        dbr:Joy,
+        dbr:Manifesto,
+        dbr:State_(polity),
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#alumer#alumeor> skos:definition "celui qui est chargé d'allumer (les chandelles etc.)"@fr ;
+    ontolex:isConceptOf dbr:Charg%C3%A9,
+        dbr:Et_cetera,
+        dbr:Ignition_system,
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#apeler#apelé> skos:definition "celui qui est cité en justice"@fr ;
+    ontolex:isConceptOf dbr:Cit%C3%A9,
+        dbr:Justice .
+
+deaf:aumaçor skos:definition "émir; chef de l'armée arabe; expression servant à qualifier celui qui est doué de bravoure"@fr ;
+    ontolex:isConceptOf dbr:Arabic,
+        dbr:Chef_(disambiguation),
+        dbr:Courage,
+        dbr:Emir,
+        dbr:Expression,
+        dbr:Military,
+        dbr:Servant_(disambiguation),
+        "missing english equivalent to French wikipedia entry",
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#ban#banier2> skos:definition "celui qui est sujet à la banalité"@fr ;
+    ontolex:isConceptOf dbr:Subjekt,
+        "no equivalents to French wikipedia entry" .
+
+deaf:banir_1 skos:definition "condammer une personne à sortir d'un pays, avec défense d'y rentrer"@fr ;
+    ontolex:isConceptOf dbr:Country,
+        dbr:Defense,
+        dbr:Personne,
+        dbr:Sortir,
+        "no equivalents to French wikipedia entry",
+        "to be mapped" .
+
+deaf:banir_2 skos:definition "celui qui est condamné à rester en dehors de son pays"@fr ;
+    ontolex:isConceptOf dbr:Condemned_(1929_film),
+        dbr:Country,
+        "no equivalents to French wikipedia entry",
+        "to be mapped" .
+
+deaf:ebdomadier skos:definition "religieux qui exerce une certaine fonction pendant une semaine"@fr ;
+    ontolex:isConceptOf dbr:Function,
+        dbr:Religion,
+        dbr:Week,
+        "to be mapped" .
+
+deaf:ebe_1 skos:definition "mouvement de la marée descendante, reflux; durée de ce reflux"@fr ;
+    ontolex:isConceptOf dbr:Movement_(disambiguation),
+        dbr:Reflux_(disambiguation),
+        dbr:Tide,
+        dbr:Time_in_physics,
+        "to be mapped" .
+
+deaf:ebe_2 skos:definition "laps de temps qui comprend la durée d’une marée"@fr ;
+    ontolex:isConceptOf dbr:Tide,
+        dbr:Time,
+        dbr:Time_in_physics,
+        "missing english equivalent to French wikipedia entry",
+        "to be mapped" .
+
+deaf:ebe_3 skos:definition "être au reflux (de la mer)"@fr ;
+    ontolex:isConceptOf dbr:Being,
+        dbr:Reflux_(disambiguation),
+        dbr:Sea .
+
+deaf:ebe_4 skos:definition "qui a été jeté sur la côte pendant le reflux de la mer"@fr ;
+    ontolex:isConceptOf dbr:A_(disambiguation),
+        dbr:Reflux_(disambiguation),
+        dbr:Sea,
+        dbr:Summer,
+        "missing english equivalent to French wikipedia entry",
+        "to be mapped" .
+
+deaf:edor skos:definition "désignation persane pour la fleur"@fr ;
+    ontolex:isConceptOf dbr:Flower,
+        dbr:Persian,
+        "no equivalents to French wikipedia entry" .
+
+deaf:efimere_1 skos:definition "qui dure un jour ou peu plus (dit de la fièvre, de la peine)"@fr ;
+    ontolex:isConceptOf dbr:DIT,
+        dbr:Day,
+        dbr:Fever,
+        dbr:Peu,
+        "missing english equivalent to French wikipedia entry" .
+
+deaf:efimere_2 skos:definition "qui souffre de la fièvre efimere"@fr ;
+    ontolex:isConceptOf dbr:Fever,
+        "to be mapped" .
+
+deaf:efimere_3 skos:definition "qui ne vit qu’un jour"@fr ;
+    ontolex:isConceptOf dbr:Day,
+        dbr:Penis,
+        "missing english equivalent to French wikipedia entry" .
+
+deaf:efimere_4 skos:definition "qui a rapport à un jour"@fr ;
+    ontolex:isConceptOf dbr:A_(disambiguation),
+        dbr:Day,
+        dbr:Rapport_(disambiguation) .
+
+deaf:efimere_5 skos:definition "qui dure un jour ou peu plus (dit de la fièvre, de la peine)"@fr ;
+    ontolex:isConceptOf dbr:DIT,
+        dbr:Day,
+        dbr:Fever,
+        dbr:Peu,
+        "missing english equivalent to French wikipedia entry" .
+
+deaf:engrot1 skos:definition "qui évoque un état maladif"@fr ;
+    ontolex:isConceptOf dbr:State_(polity),
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#feminin#feminalement> skos:definition "à la manière d'une femme"@fr ;
+    ontolex:isConceptOf dbr:Woman .
+
+deaf:festele_1 skos:definition "produire (de nouveau) le son d’une festele (2o)"@fr ;
+    ontolex:isConceptOf dbr:Production_(economics),
+        "missing english equivalent to French wikipedia entry",
+        "to be mapped" .
+
+deaf:festele_2 skos:definition "avoir le dernier mot"@fr ;
+    ontolex:isConceptOf <https://dbpedia.org/resource/French_conjugation#Avoir>,
+        dbr:Word,
+        "no equivalents to French wikipedia entry" .
+
+deaf:festele_3 skos:definition "laisser (de nouveau) la parole (à qn)"@fr ;
+    ontolex:isConceptOf dbr:Speech,
+        "missing english equivalent to French wikipedia entry",
+        "to be mapped" .
+
+deaf:festele_4 skos:definition "faire du bruit"@fr ;
+    ontolex:isConceptOf dbr:Noise,
+        "no equivalents to French wikipedia entry" .
+
+deaf:festele_5 skos:definition "produire un son accompagné de résonances qui résultent de pas d’hommes, de chevaux etc., résonner"@fr ;
+    ontolex:isConceptOf dbr:Et_cetera,
+        dbr:Hommes,
+        dbr:Horse,
+        dbr:Production_(economics),
+        "missing english equivalent to French wikipedia entry",
+        "no equivalents to French wikipedia entry",
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#festre#festrier> skos:definition "qui est de la nature de la fistule, fistuleux"@fr ;
+    ontolex:isConceptOf dbr:Fistula,
+        dbr:Nature,
+        "to be mapped" .
+
+deaf:festre_1 skos:definition "se transformer en fistule"@fr ;
+    ontolex:isConceptOf dbr:Fistula,
+        dbr:Transformer_(disambiguation) .
+
+deaf:festre_2 skos:definition "se transformer en fistule"@fr ;
+    ontolex:isConceptOf dbr:Fistula,
+        dbr:Transformer_(disambiguation) .
+
+deaf:figure skos:definition "personne ou sa manière d’être, considérée comme pouvant être imitée"@fr ;
+    ontolex:isConceptOf dbr:Being,
+        dbr:Personne,
+        "to be mapped" .
+
+deaf:figure_1 skos:definition "d’une manière figurée"@fr ;
+    ontolex:isConceptOf "to be mapped" .
+
+deaf:figure_2 skos:definition "d’une manière symbolique"@fr ;
+    ontolex:isConceptOf dbr:Symbology .
+
+deaf:figure_3 skos:definition "d’une façon qui, dans l’ordre quantitatif, dépasse de loin la moyenne"@fr ;
+    ontolex:isConceptOf dbr:Mean,
+        dbr:Technique_(method),
+        "missing english equivalent to French wikipedia entry",
+        "to be mapped" .
+
+deaf:hart skos:definition "sous peine de pendaison"@fr ;
+    ontolex:isConceptOf dbr:Hanging,
+        "missing english equivalent to French wikipedia entry" .
+
+deaf:haschiere skos:definition "d’une manière marquée de souffrance, de douleur"@fr ;
+    ontolex:isConceptOf dbr:Pain,
+        dbr:Suffering .
+
+deaf:herde skos:definition "troupeau (de bestiaux)"@fr ;
+    ontolex:isConceptOf dbr:Herd,
+        "to be mapped" .
+
+deaf:jal skos:definition "au point du jour, au chant du coq"@fr ;
+    ontolex:isConceptOf dbr:Day,
+        dbr:Point,
+        dbr:Rooster,
+        dbr:Singing .
+
+deaf:joste_1 skos:definition "à petite distance de, à côté de"@fr ;
+    ontolex:isConceptOf dbr:Distance_(disambiguation),
+        dbr:Petit,
+        "missing english equivalent to French wikipedia entry" .
+
+deaf:joste_2 skos:definition "en direction de"@fr ;
+    ontolex:isConceptOf dbr:Direction .
+
+deaf:jurer_1 skos:definition "membre du conseil chargé d’administrer une ville"@fr ;
+    ontolex:isConceptOf dbr:Administration,
+        dbr:Charg%C3%A9,
+        dbr:City,
+        dbr:Conseil,
+        dbr:Member .
+
+deaf:jurer_2 skos:definition "fonction d’un membre du conseil chargé d’administrer une ville"@fr ;
+    ontolex:isConceptOf dbr:Administration,
+        dbr:Charg%C3%A9,
+        dbr:City,
+        dbr:Conseil,
+        dbr:Function,
+        dbr:Member .
+
+deaf:jurer_3 skos:definition "prison décrétée, confirmée (par des jurés)"@fr ;
+    ontolex:isConceptOf dbr:Prison,
+        "no equivalents to French wikipedia entry",
+        "to be mapped" .
+
+deaf:jurer_4 skos:definition "qui est soumis (par serment) au droit de retour (en cas d’/apertura feudi/)"@fr ;
+    ontolex:isConceptOf dbr:CAS,
+        dbr:Law,
+        dbr:Oath,
+        "missing english equivalent to French wikipedia entry",
+        "no equivalents to French wikipedia entry",
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#ladre#lazeré> skos:definition "bruni à la manière d'un ladre"@fr ;
+    ontolex:isConceptOf dbr:Bruni,
+        "no equivalents to French wikipedia entry" .
+
+<https://deaf-server.adw.uni-heidelberg.de#lou#lovin> skos:definition "à la manière d'un loup"@fr ;
+    ontolex:isConceptOf dbr:Wolf .
+
+deaf:roïne skos:definition "femme qui exerce le pouvoir royal, aussi femme d'un roi"@fr ;
+    ontolex:isConceptOf dbr:King,
+        dbr:Royal,
+        dbr:Woman,
+        "missing english equivalent to French wikipedia entry",
+        "to be mapped" .
+
+<https://deaf-server.adw.uni-heidelberg.de#voler#voleter> skos:definition "s'essayer à voler, à la manière des petits oiseaux, aussi flotter au vent"@fr ;
+    ontolex:isConceptOf dbr:Bird,
+        dbr:Vol,
+        dbr:Wind,
+        "no equivalents to French wikipedia entry",
+        "to be mapped" .

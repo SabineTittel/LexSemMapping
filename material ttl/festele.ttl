@@ -1,0 +1,847 @@
+@prefix :         <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix deaf:     <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix ontolex:  <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix synsem:   <http://www.w3.org/ns/lemon/synsem#> .
+@prefix dbr:      <https://dbpedia.org/resource/> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix lexinfo:  <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix olia:     <http://purl.org/olia/olia.owl#> .
+@prefix decomp:   <http://www.w3.org/ns/lemon/decomp#> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexvo:    <http://lexvo.org/id/iso639-3/> .
+@prefix lime:     <http://www.w3.org/ns/lemon/lime#> .
+@prefix lexicog:  <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix semshift: <http://www.deaf-page.de/ns/semshift#> .
+
+# semantic specification property
+deaf:idem rdf:type rdf:Property .
+
+# metadata annotation
+deaf:DEAF a ontolex:Lexicon , lime:Lexicon;
+  lime:language lexvo:fro ;
+  dct:creator
+  [
+	foaf:name "Sabine Tittel"@de ;
+	foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf>
+	] ;
+  dct:publisher
+  [
+  foaf:familyName "Tittel"@de ;
+  foaf:givenName "Sabine"@de ;
+  foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf>
+  ] ;
+  dct:rights "CC-Zero" ;
+  cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dct:date "2021-10-14"^^xsd:date .
+
+# ----------------------------------------------------
+# --- main lemma -------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+:festele a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "f."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:feminine ;
+  ontolex:canonicalForm :festele_form_festele .
+:festele_form_festele a ontolex:Form ;
+	ontolex:writtenRep "festele"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:DEAF_lexresource a lexicog:LexicographicResource ;
+  dct:language lexvo:fro ;
+  lexicog:entry deaf:festele_entry .
+
+deaf:festele_entry a lexicog:Entry ;
+  rdfs:member deaf:festele_entity .
+
+deaf:festele_entity a lexicog:LexicographicComponent ;
+  lexicog:describes :festele .
+
+deaf:DEAF lime:entry :festele .
+
+# --- etymology ----------------
+
+:festele lemonety:etymology deaf:festele_etymology .
+deaf:festele_etymology a lemonety:Etymology ;
+  lemonety:etymology deaf:fistella_etymon .
+
+deaf:fistella_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:festele_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "fistella"@la .
+
+deaf:festele_etymology lemonety:etymology deaf:fistula_etymon .
+deaf:fistula_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:festele_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "fistula"@la .
+# --- autres langues -----------
+
+deaf:fistella_la a ontolex:LexicalEntry ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "fistella"@la ;
+  lemonety:isCognateOf :festele .
+deaf:flestel_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flestel"@pro ;
+  lemonety:isCognateOf :festele .
+deaf:flestelar_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flestelar"@pro ;
+  lemonety:isCognateOf :festele .
+deaf:flestel_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "flestel"@pro ;
+  lemonety:isCognateOf :festele .
+deaf:frestelar_pro a ontolex:LexicalEntry ;
+  dct:language "ancien occitan"@fr , lexvo:pro ;
+  rdfs:label "frestelar"@pro ;
+  lemonety:isCognateOf :festele .
+deaf:fristel_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "fristel"@enm ;
+  lemonety:isCognateOf :festele .
+deaf:fretel_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "fretel"@enm ;
+  lemonety:isCognateOf :festele .
+
+# --- graphical variants ----------------
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_festelle .
+:festele_form_festelle a ontolex:Form ;
+	ontolex:writtenRep "festelle"@fro .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_fretele .
+:festele_form_fretele a ontolex:Form ;
+	ontolex:writtenRep "fretele"@fro .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_fretelle .
+:festele_form_fretelle a ontolex:Form ;
+	ontolex:writtenRep "fretelle"@fro .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_frestele .
+:festele_form_frestele a ontolex:Form ;
+	ontolex:writtenRep "frestele"@fro .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_fertele .
+:festele_form_fertele a ontolex:Form ;
+	ontolex:writtenRep "fertele"@fro .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_frestelle .
+:festele_form_frestelle a ontolex:Form ;
+	ontolex:writtenRep "frestelle"@fro .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_fretiele .
+:festele_form_fretiele a ontolex:Form ;
+	ontolex:writtenRep "fretiele"@fro .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_fretielle .
+:festele_form_fretielle a ontolex:Form ;
+	ontolex:writtenRep "fretielle"@frm .
+
+# graphical variant
+:festele ontolex:otherForm :festele_form_fretale .
+:festele_form_fretale a ontolex:Form ;
+	ontolex:writtenRep "fretale"@unassigned .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+
+:festele ontolex:sense :festele_sense1 ;
+  ontolex:evokes :festele_sense1_lexConcept .
+
+:festele_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festele_sense1_lexConcept ;
+  rdfs:comment "DEAF article festele / main sense number 1"@en .
+
+:festele_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "conduit à section plus ou moins arrondie (en matière rigide, flexible ou souple) destiné à faire passer un liquide ou un gaz, tuyau"@fr ;
+  ontolex:lexicalizedSense :festele_sense1 .
+
+# sub sense number 1.a.
+
+:festele ontolex:sense :festele_sense1.a ;
+  ontolex:evokes :festele_sense1.a_lexConcept .
+
+:festele_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festele_sense1.a_lexConcept ;
+  
+  ontolex:usage <https://dbpedia.org/page/Trope_(literature)> ;
+  semshift:image :festele_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article festele / main sense number 1.a"@en .
+
+:festele_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "conduit à section plus ou moins arrondie (en matière rigide, flexible ou souple) destiné à faire passer un liquide, un gaz, tuyau"@fr ;
+  deaf:idem "“id.”, dans une  image"@fr ;
+  ontolex:lexicalizedSense :festele_sense1.a .
+
+# main sense number 2.
+
+:festele ontolex:sense :festele_sense2 ;
+  ontolex:evokes :festele_sense2_lexConcept .
+
+:festele_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festele_sense2_lexConcept ;
+  
+  ontolex:usage dbr:Metonymy ;
+  semshift:metonymy :festele_sense2 ;
+  rdfs:comment "usage: annotation in top level of semantic structure"@en ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article festele / main sense number 2"@en .
+
+:festele_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "instrument de musique fait d’une tige de roseau dont la moelle a été dégagée et qui a été troué (d’un nombre variable de trous), sorte de flûte ou de pipeau"@fr ;
+  ontolex:lexicalizedSense :festele_sense2 .
+
+# main sense number 3.
+
+:festele ontolex:sense :festele_sense3 ;
+  ontolex:evokes :festele_sense3_lexConcept .
+
+:festele_sense3 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festele_sense3_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article festele / main sense number 3"@en .
+
+:festele_sense3_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "abouchement anormal d'une cavité dans une autre donnant passage de façon continue à un produit physiologique (urine, matière fécale, bile, etc.) ou purulent qui s'écoule à la surface du corps (ayant une forme qui ressemble à un ulcère) ou dans une cavité interne, fistule"@fr ;
+  ontolex:lexicalizedSense :festele_sense3 .
+
+# sub sense number 3.a.
+
+# collocation "gote festele"
+:gote_festele a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :festele ;
+  vartrans:lexicalRel lexinfo:collocation ;
+  rdfs:label "gote festele"@fro ;
+  ontolex:canonicalForm :gote_festele_form .
+
+:gote_festele_form a ontolex:Form ;
+  ontolex:writtenRep "gote festele"@fro .
+
+:gote_festele ontolex:sense :festele_sense3.a ;
+  ontolex:evokes :festele_sense3.a_lexConcept .
+
+:festele_sense3.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festele_sense3.a_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article festele / sub sense number 3.a"@en .
+
+:festele_sense3.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "maladie (considérée comme causée par des gouttes d'humeur viciée) qui se manifeste comme fistule ou comme ulcère"@fr ;
+  ontolex:lexicalizedSense :festele_sense3.a .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :festel_form_festel .
+:festel_form_festel a ontolex:Form ;
+	ontolex:writtenRep "festel"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:festele_entry rdfs:member deaf:festel_entity .
+deaf:festel_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_flestel .
+:festel_form_flestel a ontolex:Form ;
+	ontolex:writtenRep "flestel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_flastel .
+:festel_form_flastel a ontolex:Form ;
+	ontolex:writtenRep "flastel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_fletel .
+:festel_form_fletel a ontolex:Form ;
+	ontolex:writtenRep "fletel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_fertel .
+:festel_form_fertel a ontolex:Form ;
+	ontolex:writtenRep "fertel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_frestel .
+:festel_form_frestel a ontolex:Form ;
+	ontolex:writtenRep "frestel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_fresteil .
+:festel_form_fresteil a ontolex:Form ;
+	ontolex:writtenRep "fresteil"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_fretel .
+:festel_form_fretel a ontolex:Form ;
+	ontolex:writtenRep "fretel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_freytel .
+:festel_form_freytel a ontolex:Form ;
+	ontolex:writtenRep "freytel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_frestrel .
+:festel_form_frestrel a ontolex:Form ;
+	ontolex:writtenRep "frestrel"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_fristel .
+:festel_form_fristel a ontolex:Form ;
+	ontolex:writtenRep "fristel"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_ferestal .
+:festel_form_ferestal a ontolex:Form ;
+	ontolex:writtenRep "ferestal"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:otherForm :festel_form_feustel .
+:festel_form_feustel a ontolex:Form ;
+	ontolex:writtenRep "feustel"@xno .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense1 ;
+  ontolex:evokes :festel_sense1_lexConcept .
+
+:festel_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense1_lexConcept ;
+  rdfs:comment "DEAF article festel / main sense number 1"@en .
+
+:festel_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "conduit à section plus ou moins arrondie (en matière rigide, flexible ou souple) destiné à faire passer un liquide ou un gaz, tuyau"@fr ;
+  ontolex:lexicalizedSense :festel_sense1 .
+
+# sub sense number 1.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense1.a ;
+  ontolex:evokes :festel_sense1.a_lexConcept .
+
+:festel_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense1.a_lexConcept ;
+  
+  ontolex:usage dbr:Metonymy ;
+  semshift:metonymy :festel_sense1 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Heraldry ;rdfs:comment "DEAF article festel / main sense number 1.a"@en .
+
+:festel_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "bande, barre, pal ou fasce plus étroite (1/2 ou 1/3 de la largeur ordinaire), cotice"@fr ;
+  ontolex:lexicalizedSense :festel_sense1.a .
+
+# main sense number 2.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense2 ;
+  ontolex:evokes :festel_sense2_lexConcept .
+
+:festel_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense2_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article festel / main sense number 2"@en .
+
+:festel_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "abouchement anormal d'une cavité dans une autre donnant passage de façon continue à un produit physiologique (urine, matière fécale, bile, etc.) ou purulent qui s'écoule à la surface du corps (ayant une forme qui ressemble à un ulcère) ou dans une cavité interne, fistule"@fr ;
+  ontolex:lexicalizedSense :festel_sense2 .
+
+# main sense number 3.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense3 ;
+  ontolex:evokes :festel_sense3_lexConcept .
+
+:festel_sense3 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3_lexConcept ;
+  
+  ontolex:usage dbr:Metonymy ;
+  semshift:metonymy :festel_sense3 ;
+  rdfs:comment "usage: annotation in top level of semantic structure"@en ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article festel / main sense number 3"@en .
+
+:festel_sense3_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "instrument de musique fait d’une tige de roseau dont la moelle a été dégagée et qui a été troué (d’un nombre variable de trous), sorte de flûte ou de pipeau"@fr ;
+  ontolex:lexicalizedSense :festel_sense3 .
+
+# sub sense number 3.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense3.a ;
+  ontolex:evokes :festel_sense3.a_lexConcept .
+
+:festel_sense3.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.a_lexConcept ;
+  
+  ontolex:usage dbr:Hyponymy_and_hypernymy ;
+  semshift:minimalValue :festel_sense3 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article festel / main sense number 3.a"@en .
+
+:festel_sense3.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "instrument de musique fait d’une tige du roseau dont la moelle a été dégagée et qui a été troué (d’un nombre variable de trous), sorte de flûte ou de pipeau"@fr ;
+  deaf:idem "“id.”, comme expr. d’une  val. min."@fr ;
+  ontolex:lexicalizedSense :festel_sense3.a .
+
+# sub sense number 3.b.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense3.b ;
+  ontolex:evokes :festel_sense3.b_lexConcept .
+
+:festel_sense3.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.b_lexConcept ;
+  
+  ontolex:usage dbr:Proper_noun ;
+  semshift:anthroponym :festel_sense3 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article festel / main sense number 3.b"@en .
+
+:festel_sense3.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "instrument de musique fait d’une tige du roseau dont la moelle a été dégagée et qui a été troué (d’un nombre variable de trous), sorte de flûte ou de pipeau"@fr ;
+  deaf:idem "“id.”, comme  nom propre"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.b .
+
+# sub sense number 3.c.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense3.c ;
+  ontolex:evokes :festel_sense3.c_lexConcept .
+
+:festel_sense3.c a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.c_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :festel_sense3 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article festel / main sense number 3.c"@en .
+
+:festel_sense3.c_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "instrument de musique fait d’une tige du roseau dont la moelle a été dégagée et qui a été troué (d’un nombre variable de trous), sorte de flûte ou de pipeau"@fr ;
+  deaf:idem "“id.”, comme  métaphore"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.c .
+
+# sub sense number 3.d.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense3.d ;
+  ontolex:evokes :festel_sense3.d_lexConcept .
+
+:festel_sense3.d a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.d_lexConcept ;
+  
+  ontolex:usage dbr:Metonymy ;
+  semshift:metonymy :festel_sense3 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :festel_sense3 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article festel / main sense number 3.d"@en .
+
+:festel_sense3.d_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "son produit par le frestel"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.d .
+
+# sub sense number 3.e.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ontolex:sense :festel_sense3.e ;
+  ontolex:evokes :festel_sense3.e_lexConcept .
+
+:festel_sense3.e a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.e_lexConcept ;
+  rdfs:comment "DEAF article festel / main sense number 3.e"@en .
+
+:festel_sense3.e_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "bruit de voix, bavardage perçu comme désagréable et oiseux"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.e .
+
+# sub sense number 3.f.
+
+# locution "avoir le festel"
+:avoir_le_festel a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ;
+  rdfs:label "avoir le festel"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :avoir_le_festel_form .
+
+:avoir_le_festel_form a ontolex:Form ;
+  ontolex:writtenRep "avoir le festel"@fro .
+
+:avoir_le_festel ontolex:sense :festel_sense3.f ;
+  ontolex:evokes :festel_sense3.f_lexConcept .
+
+:festel_sense3.f a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.f_lexConcept ;
+  rdfs:comment "DEAF article festel / sub sense number 3.f"@en .
+
+:festel_sense3.f_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "avoir le dernier mot"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.f .
+
+# sub sense number 3.g.
+
+# locution "represter le festel"
+:represter_le_festel a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ;
+  rdfs:label "represter le festel"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :represter_le_festel_form .
+
+:represter_le_festel_form a ontolex:Form ;
+  ontolex:writtenRep "represter le festel"@fro .
+
+:represter_le_festel ontolex:sense :festel_sense3.g ;
+  ontolex:evokes :festel_sense3.g_lexConcept .
+
+:festel_sense3.g a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.g_lexConcept ;
+  rdfs:comment "DEAF article festel / sub sense number 3.g"@en .
+
+:festel_sense3.g_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "laisser (de nouveau) la parole (à qn)"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.g .
+
+# sub sense number 3.h.
+
+# locution "abatre le festel"
+:abatre_le_festel a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ;
+  rdfs:label "abatre le festel"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :abatre_le_festel_form .
+
+:abatre_le_festel_form a ontolex:Form ;
+  ontolex:writtenRep "abatre le festel"@fro .
+
+:abatre_le_festel ontolex:sense :festel_sense3.h ;
+  ontolex:evokes :festel_sense3.h_lexConcept .
+
+:festel_sense3.h a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.h_lexConcept ;
+  rdfs:comment "DEAF article festel / sub sense number 3.h"@en .
+
+:festel_sense3.h_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "rabattre le caquet"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.h .
+
+# sub sense number 3.i.
+
+# locution "tenir en grant festel"
+:tenir_en_grant_festel a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#festel> ;
+  rdfs:label "tenir en grant festel"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :tenir_en_grant_festel_form .
+
+:tenir_en_grant_festel_form a ontolex:Form ;
+  ontolex:writtenRep "tenir en grant festel"@fro .
+
+:tenir_en_grant_festel ontolex:sense :festel_sense3.i ;
+  ontolex:evokes :festel_sense3.i_lexConcept .
+
+:festel_sense3.i a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :festel_sense3.i_lexConcept ;
+  rdfs:comment "DEAF article festel / sub sense number 3.i"@en .
+
+:festel_sense3.i_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "soumettre (qn) à des attaques (physiques ou verbales), harceler"@fr ;
+  ontolex:lexicalizedSense :festel_sense3.i .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "v."@fr ,
+  lexinfo:verb ;
+  ontolex:canonicalForm :fresteler_form_fresteler .
+:fresteler_form_fresteler a ontolex:Form ;
+	ontolex:writtenRep "fresteler"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:festele_entry rdfs:member deaf:fresteler_entity .
+deaf:fresteler_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:otherForm :fresteler_form_fresteller .
+:fresteler_form_fresteller a ontolex:Form ;
+	ontolex:writtenRep "fresteller"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:otherForm :fresteler_form_freteler .
+:fresteler_form_freteler a ontolex:Form ;
+	ontolex:writtenRep "freteler"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:otherForm :fresteler_form_freteller .
+:fresteler_form_freteller a ontolex:Form ;
+	ontolex:writtenRep "freteller"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1 ;
+  ontolex:evokes :fresteler_sense1_lexConcept .
+
+:fresteler_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1_lexConcept ;
+  rdfs:comment "DEAF article fresteler / main sense number 1"@en .
+
+:fresteler_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "jouer de la festele (2o)"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1 .
+
+# sub sense number 1.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1.a ;
+  ontolex:evokes :fresteler_sense1.a_lexConcept .
+
+:fresteler_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1.a_lexConcept ;
+  rdfs:comment "DEAF article fresteler / main sense number 1.a"@en .
+
+:fresteler_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire le son d’une festele (2o)"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1.a .
+
+# sub sense number 1.b.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1.b ;
+  ontolex:evokes :fresteler_sense1.b_lexConcept .
+
+:fresteler_sense1.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1.b_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fresteler_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fresteler / main sense number 1.b"@en .
+
+:fresteler_sense1.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire un son qui ressemble à celui d’une festele (2o)"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1.b .
+
+# sub sense number 1.c.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1.c ;
+  ontolex:evokes :fresteler_sense1.c_lexConcept .
+
+:fresteler_sense1.c a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1.c_lexConcept ;
+  rdfs:comment "DEAF article fresteler / main sense number 1.c"@en .
+
+:fresteler_sense1.c_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire son son (en parlant d’instruments à vent)"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1.c .
+
+# sub sense number 1.d.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1.d ;
+  ontolex:evokes :fresteler_sense1.d_lexConcept .
+
+:fresteler_sense1.d a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1.d_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fresteler_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fresteler / main sense number 1.d"@en .
+
+:fresteler_sense1.d_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "s’exprimer d’une façon affectée pour édulcorer son propos, pour flatter"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1.d .
+
+# sub sense number 1.e.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1.e ;
+  ontolex:evokes :fresteler_sense1.e_lexConcept .
+
+:fresteler_sense1.e a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1.e_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fresteler_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fresteler / main sense number 1.e"@en .
+
+:fresteler_sense1.e_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "faire du bruit"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1.e .
+
+# sub sense number 1.f.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1.f ;
+  ontolex:evokes :fresteler_sense1.f_lexConcept .
+
+:fresteler_sense1.f a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1.f_lexConcept ;
+  rdfs:comment "DEAF article fresteler / main sense number 1.f"@en .
+
+:fresteler_sense1.f_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "répandre (qch.), ébruiter"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1.f .
+
+# sub sense number 1.g.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense1.g ;
+  ontolex:evokes :fresteler_sense1.g_lexConcept .
+
+:fresteler_sense1.g a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense1.g_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fresteler_sense1 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fresteler / main sense number 1.g"@en .
+
+:fresteler_sense1.g_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire un son accompagné de résonances qui résultent de pas d’hommes, de chevaux etc., résonner"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense1.g .
+
+# main sense number 2.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense2 ;
+  ontolex:evokes :fresteler_sense2_lexConcept .
+
+:fresteler_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense2_lexConcept ;
+  rdfs:comment "DEAF article fresteler / main sense number 2"@en .
+
+:fresteler_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "jouer (qch.) sur une festele (2o)"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense2 .
+
+# sub sense number 2.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense2.a ;
+  ontolex:evokes :fresteler_sense2.a_lexConcept .
+
+:fresteler_sense2.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense2.a_lexConcept ;
+  rdfs:comment "DEAF article fresteler / main sense number 2.a"@en .
+
+:fresteler_sense2.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "adresser une mélodie, un son joué sur une festele (2o)"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense2.a .
+
+# sub sense number 2.b.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#fresteler> ontolex:sense :fresteler_sense2.b ;
+  ontolex:evokes :fresteler_sense2.b_lexConcept .
+
+:fresteler_sense2.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fresteler_sense2.b_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fresteler_sense2 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fresteler / main sense number 2.b"@en .
+
+:fresteler_sense2.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "faire résonner"@fr ;
+  ontolex:lexicalizedSense :fresteler_sense2.b .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#frestelement> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "m."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:masculine ;
+  ontolex:canonicalForm :frestelement_form_frestelement .
+:frestelement_form_frestelement a ontolex:Form ;
+	ontolex:writtenRep "frestelement"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:festele_entry rdfs:member deaf:frestelement_entity .
+deaf:frestelement_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#frestelement> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#frestelement> .
+
+# --- etymology ----------------
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#frestelement> ontolex:sense :frestelement_sense1 ;
+  ontolex:evokes :frestelement_sense1_lexConcept .
+
+:frestelement_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :frestelement_sense1_lexConcept ;
+  
+  ontolex:usage <https://dbpedia.org/page/Trope_(literature)> ;
+  semshift:image :frestelement_sense1 ;
+  rdfs:comment "usage: annotation in top level of semantic structure"@en ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article frestelement / main sense number 1"@en .
+
+:frestelement_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "ensemble de sons que produit une festele (2o)"@fr ;
+  ontolex:lexicalizedSense :frestelement_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#refresteler> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "v.intr."@fr ,
+  lexinfo:verb ;
+  synsem:synBehavior
+    [ a synsem:SyntacticFrame , lexinfo:IntransitiveFrame ] ;
+  rdfs:comment "developed form"@en .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:festele_entry rdfs:member deaf:refresteler_entity .
+deaf:refresteler_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#refresteler> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/festele#refresteler> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#refresteler> ontolex:otherForm :refresteler_form_refreteler .
+:refresteler_form_refreteler a ontolex:Form ;
+	ontolex:writtenRep "refreteler"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festele#refresteler> ontolex:sense :refresteler_sense1 ;
+  ontolex:evokes :refresteler_sense1_lexConcept .
+
+:refresteler_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :refresteler_sense1_lexConcept ;
+  rdfs:comment "DEAF article refresteler / main sense number 1"@en .
+
+:refresteler_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "produire (de nouveau) le son d’une festele (2o)"@fr ;
+  ontolex:lexicalizedSense :refresteler_sense1 .

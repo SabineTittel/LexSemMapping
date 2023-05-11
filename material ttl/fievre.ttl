@@ -1,0 +1,1239 @@
+@prefix :         <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix deaf:     <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix ontolex:  <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix synsem:   <http://www.w3.org/ns/lemon/synsem#> .
+@prefix dbr:      <https://dbpedia.org/resource/> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix lexinfo:  <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix olia:     <http://purl.org/olia/olia.owl#> .
+@prefix decomp:   <http://www.w3.org/ns/lemon/decomp#> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexvo:    <http://lexvo.org/id/iso639-3/> .
+@prefix lime:     <http://www.w3.org/ns/lemon/lime#> .
+@prefix lexicog:  <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix semshift: <http://www.deaf-page.de/ns/semshift#> .
+
+# semantic specification property
+deaf:idem rdf:type rdf:Property .
+
+# metadata annotation
+deaf:DEAF a ontolex:Lexicon , lime:Lexicon;
+  lime:language lexvo:fro ;
+  dct:creator
+  [
+	foaf:name "Sabine Tittel"@de ;
+	foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf>
+	] ;
+  dct:publisher
+  [
+  foaf:familyName "Tittel"@de ;
+  foaf:givenName "Sabine"@de ;
+  foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf>
+  ] ;
+  dct:rights "CC-Zero" ;
+  cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dct:date "2021-10-14"^^xsd:date .
+
+# ----------------------------------------------------
+# --- main lemma -------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+:fievre a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "f."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:feminine ;
+  ontolex:canonicalForm :fievre_form_fievre .
+:fievre_form_fievre a ontolex:Form ;
+	ontolex:writtenRep "fievre"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:DEAF_lexresource a lexicog:LexicographicResource ;
+  dct:language lexvo:fro ;
+  lexicog:entry deaf:fievre_entry .
+
+deaf:fievre_entry a lexicog:Entry ;
+  rdfs:member deaf:fievre_entity .
+
+deaf:fievre_entity a lexicog:LexicographicComponent ;
+  lexicog:describes :fievre .
+
+deaf:DEAF lime:entry :fievre .
+
+# --- etymology ----------------
+
+:fievre lemonety:etymology deaf:fievre_etymology .
+deaf:fievre_etymology a lemonety:Etymology ;
+  lemonety:etymology deaf:febris_etymon .
+
+deaf:febris_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:fievre_etymology ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "febris"@la .
+
+# --- autres langues -----------
+
+deaf:febre_oc a ontolex:LexicalEntry ;
+  dct:language "occitan"@fr , lexvo:oci ,
+  <http://id.loc.gov/vocabulary/iso639-1/oc.html> ;
+  rdfs:label "febre"@oc ;
+  lemonety:isCognateOf :fievre .
+deaf:febre_ca a ontolex:LexicalEntry ;
+  dct:language "catalan"@fr , lexvo:cat ,
+  <https://id.loc.gov/vocabulary/iso639-1/ca.html> ;
+  rdfs:label "febre"@ca ;
+  lemonety:isCognateOf :fievre .
+deaf:fiebre_es a ontolex:LexicalEntry ;
+  dct:language "espagnol"@fr , lexvo:spa ,
+  <https://id.loc.gov/vocabulary/iso639-1/es.html> ;
+  rdfs:label "fiebre"@es ;
+  lemonety:isCognateOf :fievre .
+deaf:febre_pt a ontolex:LexicalEntry ;
+  dct:language "portugais"@fr , lexvo:por ,
+  <https://id.loc.gov/vocabulary/iso639-1/pt.html> ;
+  rdfs:label "febre"@por ;
+  lemonety:isCognateOf :fievre .
+deaf:febbre_it a ontolex:LexicalEntry ;
+  dct:language "italien"@fr , lexvo:ita ,
+  <https://id.loc.gov/vocabulary/iso639-1/it.html> ;
+  rdfs:label "febbre"@it ;
+  lemonety:isCognateOf :fievre .
+deaf:füria_lld a ontolex:LexicalEntry ;
+  dct:language "ladin"@fr , lexvo:lld ;
+  rdfs:label "füria"@lld ;
+  lemonety:isCognateOf :fievre .
+deaf:fiória_lld a ontolex:LexicalEntry ;
+  dct:language "ladin"@fr , lexvo:lld ;
+  rdfs:label "fiória"@lld ;
+  lemonety:isCognateOf :fievre .
+deaf:fiére_fur a ontolex:LexicalEntry ;
+  dct:language "frioulan"@fr , lexvo:fur ;
+  rdfs:label "fiére"@fur ;
+  lemonety:isCognateOf :fievre .
+deaf:fiévre_fur a ontolex:LexicalEntry ;
+  dct:language "frioulan"@fr , lexvo:fur ;
+  rdfs:label "fiévre"@fur ;
+  lemonety:isCognateOf :fievre .
+deaf:fiévra_fur a ontolex:LexicalEntry ;
+  dct:language "frioulan"@fr , lexvo:fur ;
+  rdfs:label "fiévra"@fur ;
+  lemonety:isCognateOf :fievre .
+deaf:febra_sursilv a ontolex:LexicalEntry ;
+  dct:language "sursilvain"@fr , lexvo:unassigned ;
+  rdfs:label "febra"@unassigned ;
+  lemonety:isCognateOf :fievre .
+deaf:fiori_ro a ontolex:LexicalEntry ;
+  dct:language "roumain"@fr , lexvo:ron ,
+  <https://id.loc.gov/vocabulary/iso639-1/ro.html> ;
+  rdfs:label "fiori"@ro ;
+  lemonety:isCognateOf :fievre .
+deaf:fever_en a ontolex:LexicalEntry ;
+  dct:language "anglais"@fr , lexvo:en ,
+  <https://id.loc.gov/vocabulary/iso639-1/en.html> ;
+  rdfs:label "fever"@en ;
+  lemonety:isCognateOf :fievre .
+deaf:fiever_terciane_en a ontolex:LexicalEntry ;
+  dct:language "anglais"@fr , lexvo:en ,
+  <https://id.loc.gov/vocabulary/iso639-1/en.html> ;
+  rdfs:label "fiever terciane"@en ;
+  lemonety:isCognateOf :fievre .
+deaf:fiever_quartane_en a ontolex:LexicalEntry ;
+  dct:language "anglais"@fr , lexvo:en ,
+  <https://id.loc.gov/vocabulary/iso639-1/en.html> ;
+  rdfs:label "fiever quartane"@en ;
+  lemonety:isCognateOf :fievre .
+deaf:Fieber_de a ontolex:LexicalEntry ;
+  dct:language "allemand"@fr , lexvo:deu ,
+  <https://id.loc.gov/vocabulary/iso639-1/de.html> ;
+  rdfs:label "Fieber"@de ;
+  lemonety:isCognateOf :fievre .
+deaf:feber_no a ontolex:LexicalEntry ;
+  dct:language "norvégien"@fr , lexvo:nor ,
+  <https://id.loc.gov/vocabulary/iso639-1/no.html> ;
+  rdfs:label "feber"@xxx ;
+  lemonety:isCognateOf :fievre .
+deaf:feber_da a ontolex:LexicalEntry ;
+  dct:language "danois"@fr , lexvo:dan ,
+  <https://id.loc.gov/vocabulary/iso639-1/da.html> ;
+  rdfs:label "feber"@da ;
+  lemonety:isCognateOf :fievre .
+deaf:viertägiges_Fieber_de a ontolex:LexicalEntry ;
+  dct:language "allemand"@fr , lexvo:deu ,
+  <https://id.loc.gov/vocabulary/iso639-1/de.html> ;
+  rdfs:label "viertägiges Fieber"@de ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievre> .
+deaf:febres_acutae_la a ontolex:LexicalEntry ;
+  dct:language "latin"@fr , lexvo:lat ,
+  <https://id.loc.gov/vocabulary/iso639-1/la.html> ;
+  rdfs:label "febres acutae"@la ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievre> .
+
+# --- graphical variants ----------------
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fevre .
+:fievre_form_fevre a ontolex:Form ;
+	ontolex:writtenRep "fevre"@fro .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_feivre .
+:fievre_form_feivre a ontolex:Form ;
+	ontolex:writtenRep "feivre"@fro .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fieuvre .
+:fievre_form_fieuvre a ontolex:Form ;
+	ontolex:writtenRep "fieuvre"@fro .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fiebre .
+:fievre_form_fiebre a ontolex:Form ;
+	ontolex:writtenRep "fiebre"@xno .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fiebre .
+:fievre_form_fiebre a ontolex:Form ;
+	ontolex:writtenRep "fiebre"@unassigned .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fever .
+:fievre_form_fever a ontolex:Form ;
+	ontolex:writtenRep "fever"@xno .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fevere .
+:fievre_form_fevere a ontolex:Form ;
+	ontolex:writtenRep "fevere"@xno .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fievere .
+:fievre_form_fievere a ontolex:Form ;
+	ontolex:writtenRep "fievere"@xno .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fevir .
+:fievre_form_fevir a ontolex:Form ;
+	ontolex:writtenRep "fevir"@xno .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fevris .
+:fievre_form_fevris a ontolex:Form ;
+	ontolex:writtenRep "fevris"@fro .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_fivre .
+:fievre_form_fivre a ontolex:Form ;
+	ontolex:writtenRep "fivre"@fro .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_febre .
+:fievre_form_febre a ontolex:Form ;
+	ontolex:writtenRep "febre"@unassigned .
+
+# graphical variant
+:fievre ontolex:otherForm :fievre_form_febre .
+:fievre_form_febre a ontolex:Form ;
+	ontolex:writtenRep "febre"@unassigned .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+
+:fievre ontolex:sense :fievre_sense1 ;
+  ontolex:evokes :fievre_sense1_lexConcept .
+
+:fievre_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / main sense number 1"@en .
+
+:fievre_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "élévation pathologique de la température habituelle du corps et, par ext., état maladif caractérisé par cette élévation (chez l’homme et chez l’animal), fièvre"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1 .
+
+# sub sense number 1.a.
+
+# locution "tenir fievre"
+:tenir_fievre a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "tenir fievre"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :tenir_fievre_form .
+
+:tenir_fievre_form a ontolex:Form ;
+  ontolex:writtenRep "tenir fievre"@fro .
+
+:tenir_fievre ontolex:sense :fievre_sense1.a ;
+  ontolex:evokes :fievre_sense1.a_lexConcept .
+
+:fievre_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.a_lexConcept ;
+  
+  ontolex:usage dbr:Malediction ;
+  semshift:malediction :fievre_sense1 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article fievre / sub sense number 1.a"@en .
+
+:fievre_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "élévation pathologique de la température habituelle du corps et, par ext., état maladif caractérisé par cette élévation (chez l’homme et chez l’animal), fièvre"@fr ;
+  deaf:idem "“id.”, comme élément dans des  formules d’imprécations   tenir fievre ++/++ prendre fievre  etc."@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.a .
+
+# locution "prendre fievre"
+:prendre_fievre a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "prendre fievre"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :prendre_fievre_form .
+
+:prendre_fievre_form a ontolex:Form ;
+  ontolex:writtenRep "prendre fievre"@fro .
+
+:prendre_fievre ontolex:sense :fievre_sense1.a ;
+  ontolex:evokes :fievre_sense1.a_lexConcept .
+
+:fievre_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.a_lexConcept ;
+  
+  ontolex:usage dbr:Malediction ;
+  semshift:malediction :fievre_sense1 ;
+  semshift:associateRelation semshift:ConceptualContiguity ;rdfs:comment "DEAF article fievre / sub sense number 1.a"@en .
+
+:fievre_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "élévation pathologique de la température habituelle du corps et, par ext., état maladif caractérisé par cette élévation (chez l’homme et chez l’animal), fièvre"@fr ;
+  deaf:idem "“id.”, comme élément dans des  formules d’imprécations   tenir fievre ++/++ prendre fievre  etc."@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.a .
+
+# sub sense number 1.b.
+
+# locution "fievre agüe"
+:fievre_agüe a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre agüe"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_agüe_form .
+
+:fievre_agüe_form a ontolex:Form ;
+  ontolex:writtenRep "fievre agüe"@fro .
+
+:fievre_agüe ontolex:sense :fievre_sense1.b ;
+  ontolex:evokes :fievre_sense1.b_lexConcept .
+
+:fievre_sense1.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.b_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.b"@en .
+
+:fievre_sense1.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par une intensité dangereuse et au-dessus de la moyenne"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.b .
+
+# sub sense number 1.c.
+
+# locution "fievre tierce"
+:fievre_tierce a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre tierce"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_tierce_form .
+
+:fievre_tierce_form a ontolex:Form ;
+  ontolex:writtenRep "fievre tierce"@fro .
+
+:fievre_tierce ontolex:sense :fievre_sense1.c ;
+  ontolex:evokes :fievre_sense1.c_lexConcept .
+
+:fievre_sense1.c a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.c_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.c"@en .
+
+:fievre_sense1.c_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par un paroxysme le troisième jour"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.c .
+
+# sub sense number 1.d.
+
+# locution "fievre tierçaine"
+:fievre_tierçaine a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre tierçaine"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_tierçaine_form .
+
+:fievre_tierçaine_form a ontolex:Form ;
+  ontolex:writtenRep "fievre tierçaine"@fro .
+
+:fievre_tierçaine ontolex:sense :fievre_sense1.d ;
+  ontolex:evokes :fievre_sense1.d_lexConcept .
+
+
+:fievre ontolex:sense :fievre_sense1.d ;
+  ontolex:evokes :fievre_sense1.d_lexConcept .
+
+:fievre_sense1.d a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.d_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / main sense number 1.d"@en .
+
+:fievre_sense1.d_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par un paroxysme le troisième jour"@fr ;
+  deaf:idem "“id.”"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.d .
+
+# sub sense number 1.e.
+
+# locution "fievre carte"
+:fievre_carte a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre carte"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_carte_form .
+
+:fievre_carte_form a ontolex:Form ;
+  ontolex:writtenRep "fievre carte"@fro .
+
+:fievre_carte ontolex:sense :fievre_sense1.e ;
+  ontolex:evokes :fievre_sense1.e_lexConcept .
+
+:fievre_sense1.e a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.e_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.e"@en .
+
+:fievre_sense1.e_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par un paroxysme le quatrième jour"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.e .
+
+# sub sense number 1.f.
+
+# locution "fievre cartaine"
+:fievre_cartaine a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre cartaine"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_cartaine_form .
+
+:fievre_cartaine_form a ontolex:Form ;
+  ontolex:writtenRep "fievre cartaine"@fro .
+
+:fievre_cartaine ontolex:sense :fievre_sense1.f ;
+  ontolex:evokes :fievre_sense1.f_lexConcept .
+
+
+:fievre ontolex:sense :fievre_sense1.f ;
+  ontolex:evokes :fievre_sense1.f_lexConcept .
+
+:fievre_sense1.f a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.f_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / main sense number 1.f"@en .
+
+:fievre_sense1.f_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par un paroxysme le quatrième jour"@fr ;
+  deaf:idem "“id.”"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.f .
+
+# sub sense number 1.g.
+
+# locution "fievre sextaine"
+:fievre_sextaine a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre sextaine"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_sextaine_form .
+
+:fievre_sextaine_form a ontolex:Form ;
+  ontolex:writtenRep "fievre sextaine"@fro .
+
+:fievre_sextaine ontolex:sense :fievre_sense1.g ;
+  ontolex:evokes :fievre_sense1.g_lexConcept .
+
+:fievre_sense1.g a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.g_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.g"@en .
+
+:fievre_sense1.g_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par un paroxysme le sixième jour"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.g .
+
+# sub sense number 1.h.
+
+# locution "fievre efimere"
+:fievre_efimere a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre efimere"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_efimere_form .
+
+:fievre_efimere_form a ontolex:Form ;
+  ontolex:writtenRep "fievre efimere"@fro .
+
+:fievre_efimere ontolex:sense :fievre_sense1.h ;
+  ontolex:evokes :fievre_sense1.h_lexConcept .
+
+:fievre_sense1.h a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.h_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.h"@en .
+
+:fievre_sense1.h_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre qui dure un jour ou peu plus"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.h .
+
+# sub sense number 1.i.
+
+# locution "fievre etique"
+:fievre_etique a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre etique"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_etique_form .
+
+:fievre_etique_form a ontolex:Form ;
+  ontolex:writtenRep "fievre etique"@fro .
+
+:fievre_etique ontolex:sense :fievre_sense1.i ;
+  ontolex:evokes :fievre_sense1.i_lexConcept .
+
+:fievre_sense1.i a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.i_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.i"@en .
+
+:fievre_sense1.i_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre continue et consumante, fièvre étique"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.i .
+
+# sub sense number 1.j.
+
+# locution "fievre emitrite"
+:fievre_emitrite a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre emitrite"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_emitrite_form .
+
+:fievre_emitrite_form a ontolex:Form ;
+  ontolex:writtenRep "fievre emitrite"@fro .
+
+:fievre_emitrite ontolex:sense :fievre_sense1.j ;
+  ontolex:evokes :fievre_sense1.j_lexConcept .
+
+:fievre_sense1.j a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.j_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.j"@en .
+
+:fievre_sense1.j_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre intermittente qui combine des paroxysmes quotidiens et des paroxysmes tous les trois jour"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.j .
+
+# sub sense number 1.k.
+
+# locution "fievre ardante"
+:fievre_ardante a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre ardante"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_ardante_form .
+
+:fievre_ardante_form a ontolex:Form ;
+  ontolex:writtenRep "fievre ardante"@fro .
+
+:fievre_ardante ontolex:sense :fievre_sense1.k ;
+  ontolex:evokes :fievre_sense1.k_lexConcept .
+
+:fievre_sense1.k a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.k_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.k"@en .
+
+:fievre_sense1.k_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre d’une température corporelle prononcée"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.k .
+
+# sub sense number 1.l.
+
+# locution "froide fievre"
+:froide_fievre a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "froide fievre"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :froide_fievre_form .
+
+:froide_fievre_form a ontolex:Form ;
+  ontolex:writtenRep "froide fievre"@fro .
+
+:froide_fievre ontolex:sense :fievre_sense1.l ;
+  ontolex:evokes :fievre_sense1.l_lexConcept .
+
+:fievre_sense1.l a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.l_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.l"@en .
+
+:fievre_sense1.l_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre intermittente avec un sentiment de froideur prononcé pendant les jours sans paroxysme"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.l .
+
+# sub sense number 1.m.
+
+# locution "fievre interpolate"
+:fievre_interpolate a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre interpolate"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_interpolate_form .
+
+:fievre_interpolate_form a ontolex:Form ;
+  ontolex:writtenRep "fievre interpolate"@fro .
+
+:fievre_interpolate ontolex:sense :fievre_sense1.m ;
+  ontolex:evokes :fievre_sense1.m_lexConcept .
+
+:fievre_sense1.m a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.m_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.m"@en .
+
+:fievre_sense1.m_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre qui s’arrête et reprend par intervalle"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.m .
+
+# sub sense number 1.n.
+
+# locution "fievre compositive"
+:fievre_compositive a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre compositive"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_compositive_form .
+
+:fievre_compositive_form a ontolex:Form ;
+  ontolex:writtenRep "fievre compositive"@fro .
+
+:fievre_compositive ontolex:sense :fievre_sense1.n ;
+  ontolex:evokes :fievre_sense1.n_lexConcept .
+
+:fievre_sense1.n a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.n_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.n"@en .
+
+:fievre_sense1.n_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre qui est liée avec un ou plusieurs autres symptômes pathologiques, p.ex. une autre sorte de fievre, rougeur ou éruptions de la peau et sim."@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.n .
+
+# sub sense number 1.o.
+
+# locution "fievre migraigne"
+:fievre_migraigne a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre migraigne"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_migraigne_form .
+
+:fievre_migraigne_form a ontolex:Form ;
+  ontolex:writtenRep "fievre migraigne"@fro .
+
+:fievre_migraigne ontolex:sense :fievre_sense1.o ;
+  ontolex:evokes :fievre_sense1.o_lexConcept .
+
+:fievre_sense1.o a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.o_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.o"@en .
+
+:fievre_sense1.o_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre qui accompagne une migraine"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.o .
+
+# sub sense number 1.p.
+
+# locution "fievre cotidïene"
+:fievre_cotidïene a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "fievre cotidïene"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievre_cotidïene_form .
+
+:fievre_cotidïene_form a ontolex:Form ;
+  ontolex:writtenRep "fievre cotidïene"@fro .
+
+:fievre_cotidïene ontolex:sense :fievre_sense1.p ;
+  ontolex:evokes :fievre_sense1.p_lexConcept .
+
+:fievre_sense1.p a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense1.p_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievre / sub sense number 1.p"@en .
+
+:fievre_sense1.p_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par des paroxysmes quotidiens"@fr ;
+  ontolex:lexicalizedSense :fievre_sense1.p .
+
+# main sense number 2.
+
+:fievre ontolex:sense :fievre_sense2 ;
+  ontolex:evokes :fievre_sense2_lexConcept .
+
+:fievre_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense2_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fievre_sense2 ;
+  rdfs:comment "usage: annotation in top level of semantic structure"@en ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fievre / main sense number 2"@en .
+
+:fievre_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "état émotif comparé à la fièvre et accompagné d'exaltation ou d'agitation"@fr ;
+  ontolex:lexicalizedSense :fievre_sense2 .
+
+# sub sense number 2.a.
+
+:fievre ontolex:sense :fievre_sense2.a ;
+  ontolex:evokes :fievre_sense2.a_lexConcept .
+
+:fievre_sense2.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense2.a_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fievre_sense2 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fievre / main sense number 2.a"@en .
+
+:fievre_sense2.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "état émotif comparé à la fièvre et accompagné d’inquiétude et d’anxiété"@fr ;
+  ontolex:lexicalizedSense :fievre_sense2.a .
+
+# sub sense number 2.b.
+
+# locution "trembler les fievres"
+:trembler_les_fievres a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm :fievre ;
+  rdfs:label "trembler les fievres"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:verb ,
+  "locution verbale"@fr , "loc. verb."@fr ;
+  ontolex:canonicalForm :trembler_les_fievres_form .
+
+:trembler_les_fievres_form a ontolex:Form ;
+  ontolex:writtenRep "trembler les fievres"@fro .
+
+:trembler_les_fievres ontolex:sense :fievre_sense2.b ;
+  ontolex:evokes :fievre_sense2.b_lexConcept .
+
+:fievre_sense2.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievre_sense2.b_lexConcept ;
+  rdfs:comment "DEAF article fievre / sub sense number 2.b"@en .
+
+:fievre_sense2.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "montrer un état émotif comparé à la fièvre et accompagné d’inquiétude et d’anxiété"@fr ;
+  ontolex:lexicalizedSense :fievre_sense2.b .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievrete> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "f."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:feminine ;
+  rdfs:comment "developed form"@en .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:fievre_entry rdfs:member deaf:fievrete_entity .
+deaf:fievrete_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievrete> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievrete> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievrete> ontolex:otherForm :fievrete_form_fevrete .
+:fievrete_form_fevrete a ontolex:Form ;
+	ontolex:writtenRep "fevrete"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+
+# locution "fievrete tierçaine"
+:fievrete_tierçaine a ontolex:LexicalEntry , ontolex:MultiwordExpression ;
+  decomp:subterm <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievrete> ;
+  rdfs:label "fievrete tierçaine"@fro ;
+  lexinfo:termType lexinfo:phraseologicalUnit ;
+  lexinfo:partOfSpeech lexinfo:Noun ,
+  "locution nominale"@fr , "loc. subst."@fr ;
+  ontolex:canonicalForm :fievrete_tierçaine_form .
+
+:fievrete_tierçaine_form a ontolex:Form ;
+  ontolex:writtenRep "fievrete tierçaine"@fro .
+
+:fievrete_tierçaine ontolex:sense :fievrete_sense1 ;
+  ontolex:evokes :fievrete_sense1_lexConcept .
+
+:fievrete_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievrete_sense1_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievrete / main sense number 1"@en .
+
+:fievrete_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "sorte de fievre caractérisée par un paroxysme le troisième jour, d’une moindre intensité par comparaison à celle perçue comme la normale"@fr ;
+  ontolex:lexicalizedSense :fievrete_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "adj."@fr ,
+  lexinfo:Adjective ;
+  ontolex:canonicalForm :fevros_form_fevros .
+:fevros_form_fevros a ontolex:Form ;
+	ontolex:writtenRep "fevros"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:fievre_entry rdfs:member deaf:fevros_entity .
+deaf:fevros_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> .
+
+# --- etymology ----------------
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fevrus .
+:fevros_form_fevrus a ontolex:Form ;
+	ontolex:writtenRep "fevrus"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fevreus .
+:fevros_form_fevreus a ontolex:Form ;
+	ontolex:writtenRep "fevreus"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_feverus .
+:fevros_form_feverus a ontolex:Form ;
+	ontolex:writtenRep "feverus"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_feverous .
+:fevros_form_feverous a ontolex:Form ;
+	ontolex:writtenRep "feverous"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fevereus .
+:fevros_form_fevereus a ontolex:Form ;
+	ontolex:writtenRep "fevereus"@unassigned .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fievros .
+:fevros_form_fievros a ontolex:Form ;
+	ontolex:writtenRep "fievros"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fievrus .
+:fevros_form_fievrus a ontolex:Form ;
+	ontolex:writtenRep "fievrus"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fievreus .
+:fevros_form_fievreus a ontolex:Form ;
+	ontolex:writtenRep "fievreus"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fievrois .
+:fevros_form_fievrois a ontolex:Form ;
+	ontolex:writtenRep "fievrois"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fievrous .
+:fevros_form_fievrous a ontolex:Form ;
+	ontolex:writtenRep "fievrous"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_feivros .
+:fevros_form_feivros a ontolex:Form ;
+	ontolex:writtenRep "feivros"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fivreouz .
+:fevros_form_fivreouz a ontolex:Form ;
+	ontolex:writtenRep "fivreouz"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fivrous .
+:fevros_form_fivrous a ontolex:Form ;
+	ontolex:writtenRep "fivrous"@fro .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:otherForm :fevros_form_fivrois .
+:fevros_form_fivrois a ontolex:Form ;
+	ontolex:writtenRep "fivrois"@fro .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:sense :fevros_sense1 ;
+  ontolex:evokes :fevros_sense1_lexConcept .
+
+:fevros_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fevros_sense1_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fevros / main sense number 1"@en .
+
+:fevros_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "qui montre une élévation pathologique de la température habituelle du corps, fiévreux"@fr ;
+  ontolex:lexicalizedSense :fevros_sense1 .
+
+# sub sense number 1.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:sense :fevros_sense1.a ;
+  ontolex:evokes :fevros_sense1.a_lexConcept .
+
+:fevros_sense1.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fevros_sense1.a_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fevros / main sense number 1.a"@en .
+
+:fevros_sense1.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "celui qui montre une élévation pathologique de la température habituelle du corps"@fr ;
+  ontolex:lexicalizedSense :fevros_sense1.a .
+
+# sub sense number 1.b.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:sense :fevros_sense1.b ;
+  ontolex:evokes :fevros_sense1.b_lexConcept .
+
+:fevros_sense1.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fevros_sense1.b_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fevros / main sense number 1.b"@en .
+
+:fevros_sense1.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "qui a rapport à l’élévation pathologique de la température habituelle du corps ou à l’état maladif caractérisé par cette élévation"@fr ;
+  ontolex:lexicalizedSense :fevros_sense1.b .
+
+# main sense number 2.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:sense :fevros_sense2 ;
+  ontolex:evokes :fevros_sense2_lexConcept .
+
+:fevros_sense2 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fevros_sense2_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fevros_sense2 ;
+  rdfs:comment "usage: annotation in top level of semantic structure"@en ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fevros / main sense number 2"@en .
+
+:fevros_sense2_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "qui est dans un état émotif comparé à la fièvre et accompagné d'exaltation ou d'agitation"@fr ;
+  ontolex:lexicalizedSense :fevros_sense2 .
+
+# sub sense number 2.a.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:sense :fevros_sense2.a ;
+  ontolex:evokes :fevros_sense2.a_lexConcept .
+
+:fevros_sense2.a a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fevros_sense2.a_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fevros_sense2 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fevros / main sense number 2.a"@en .
+
+:fevros_sense2.a_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "celui qui est dans un état émotif comparé à la fièvre et accompagné d'exaltation ou d'agitation"@fr ;
+  ontolex:lexicalizedSense :fevros_sense2.a .
+
+# sub sense number 2.b.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevros> ontolex:sense :fevros_sense2.b ;
+  ontolex:evokes :fevros_sense2.b_lexConcept .
+
+:fevros_sense2.b a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fevros_sense2.b_lexConcept ;
+  
+  ontolex:usage dbr:Metaphor ;
+  semshift:metaphor :fevros_sense2 ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;rdfs:comment "DEAF article fevros / main sense number 2.b"@en .
+
+:fevros_sense2.b_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "qui est dans un état émotif caractérisé par d’inquiétude et d’anxiété"@fr ;
+  ontolex:lexicalizedSense :fevros_sense2.b .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievriier> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "v.intr."@fr ,
+  lexinfo:verb ;
+  synsem:synBehavior
+    [ a synsem:SyntacticFrame , lexinfo:IntransitiveFrame ] ;
+  ontolex:canonicalForm :fievriier_form_fievriier .
+:fievriier_form_fievriier a ontolex:Form ;
+	ontolex:writtenRep "fievriier"@fro .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:fievre_entry rdfs:member deaf:fievriier_entity .
+deaf:fievriier_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievriier> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievriier> .
+
+# --- etymology ----------------
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fievriier> ontolex:sense :fievriier_sense1 ;
+  ontolex:evokes :fievriier_sense1_lexConcept .
+
+:fievriier_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fievriier_sense1_lexConcept ;
+  
+  ontolex:usage <https://dbpedia.org/page/Trope_(literature)> ;
+  semshift:image :fievriier_sense1 ;
+  rdfs:comment "usage: annotation in top level of semantic structure"@en ;
+  semshift:associateRelation semshift:MetaphoricalSimilarity ;
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article fievriier / main sense number 1"@en .
+
+:fievriier_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "avoir de la fièvre"@fr ;
+  ontolex:lexicalizedSense :fievriier_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfievrer> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "v.pron."@fr ,
+  lexinfo:verb ;
+  synsem:synBehavior
+    [ a synsem:SyntacticFrame , lexinfo:ReflexiveFrame ] ;
+  ontolex:canonicalForm :enfievrer_form_enfievrer .
+:enfievrer_form_enfievrer a ontolex:Form ;
+	ontolex:writtenRep "enfievrer"@frm .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:fievre_entry rdfs:member deaf:enfievrer_entity .
+deaf:enfievrer_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfievrer> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfievrer> .
+
+# --- etymology ----------------
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfievrer> ontolex:sense :enfievrer_sense1 ;
+  ontolex:evokes :enfievrer_sense1_lexConcept .
+
+:enfievrer_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :enfievrer_sense1_lexConcept ;
+  rdfs:comment "DEAF article enfievrer / main sense number 1"@en .
+
+:enfievrer_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "se mettre dans un état émotif d'exaltation ou d'agitation"@fr ;
+  ontolex:lexicalizedSense :enfievrer_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfeverir> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "v."@fr ,
+  lexinfo:verb ;
+  ontolex:canonicalForm :enfeverir_form_enfeverir .
+:enfeverir_form_enfeverir a ontolex:Form ;
+	ontolex:writtenRep "enfeverir"@xno .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:fievre_entry rdfs:member deaf:enfeverir_entity .
+deaf:enfeverir_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfeverir> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfeverir> .
+
+# --- etymology ----------------
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#enfeverir> ontolex:sense :enfeverir_sense1 ;
+  ontolex:evokes :enfeverir_sense1_lexConcept .
+
+:enfeverir_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :enfeverir_sense1_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Medicine ;rdfs:comment "DEAF article enfeverir / main sense number 1"@en .
+
+:enfeverir_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "être ou mettre dans un état de fièvre"@fr ;
+  ontolex:lexicalizedSense :enfeverir_sense1 .
+
+# ----------------------------------------------------
+# --- sub lemma --------------------------------------
+# ----------------------------------------------------
+# --- lexical entry ----------------------------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> a ontolex:LexicalEntry ,
+	ontolex:Word ;
+  lexinfo:partOfSpeech "f."@fr ,
+  lexinfo:Noun ;
+  lexinfo:gender lexinfo:feminine ;
+  ontolex:canonicalForm :fevrefuie_form_fevrefuie .
+:fevrefuie_form_fevrefuie a ontolex:Form ;
+	ontolex:writtenRep "fevrefuie"@xno .
+
+# --- relation main lemma / sub lemma ----------------
+
+deaf:fievre_entry rdfs:member deaf:fevrefuie_entity .
+deaf:fevrefuie_entity a lexicog:LexicographicComponent ;
+  lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+deaf:DEAF lime:entry <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+
+# --- etymology ----------------
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> lemonety:etymology deaf:fevrefuie_etymology .
+deaf:fevrefuie_etymology a lemonety:Etymology ;
+  lemonety:etymology deaf:febrifuga_etymon .
+
+deaf:febrifuga_etymon a lemonety:Etymon ;
+  lemonety:isEtymologyOf deaf:fevrefuie_etymology ;
+  dct:language "moyen latin"@fr , lexvo:unassigned ;
+  rdfs:label "febrifuga"@unassigned .
+
+# --- autres langues -----------
+
+deaf:febrifugie_mlt a ontolex:LexicalEntry ;
+  dct:language "moyen latin"@fr , lexvo:unassigned ;
+  rdfs:label "febrifugie"@unassigned ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+deaf:feverefoy_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "feverefoy"@enm ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+deaf:feþerfu_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "feþerfu"@enm ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+deaf:fetherfoye_enm a ontolex:LexicalEntry ;
+  dct:language "moyen anglais"@fr , lexvo:enm ;
+  rdfs:label "fetherfoye"@enm ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+deaf:fewerfew_en a ontolex:LexicalEntry ;
+  dct:language "anglais"@fr , lexvo:en ,
+  <https://id.loc.gov/vocabulary/iso639-1/en.html> ;
+  rdfs:label "fewerfew"@en ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+deaf:Fieberkraut_de a ontolex:LexicalEntry ;
+  dct:language "allemand"@fr , lexvo:deu ,
+  <https://id.loc.gov/vocabulary/iso639-1/de.html> ;
+  rdfs:label "Fieberkraut"@de ;
+  lemonety:isCognateOf <https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> .
+
+# --- graphical variants ----------------
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> ontolex:otherForm :fevrefuie_form_fevrefeue .
+:fevrefuie_form_fevrefeue a ontolex:Form ;
+	ontolex:writtenRep "fevrefeue"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> ontolex:otherForm :fevrefuie_form_fevrefoyl .
+:fevrefuie_form_fevrefoyl a ontolex:Form ;
+	ontolex:writtenRep "fevrefoyl"@xno .
+
+# graphical variant
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> ontolex:otherForm :fevrefuie_form_febrifugie .
+:fevrefuie_form_febrifugie a ontolex:Form ;
+	ontolex:writtenRep "febrifugie"@xno .
+
+# --- senses -----------------------------------------
+
+# main sense number 1.
+<https://deaf-server.adw.uni-heidelberg.de/lemme/fievre#fevrefuie> ontolex:sense :fevrefuie_sense1 ;
+  ontolex:evokes :fevrefuie_sense1_lexConcept .
+
+:fevrefuie_sense1 a ontolex:LexicalSense ;
+  ontolex:isLexicalizedSenseOf :fevrefuie_sense1_lexConcept ;
+  
+  olia:hasRegister olia:TechnicalRegister ;
+  dct:subject dbr:Botany ;rdfs:comment "DEAF article fevrefuie / main sense number 1"@en .
+
+:fevrefuie_sense1_lexConcept a ontolex:LexicalConcept ;
+  skos:definition "plante herbacée vivace de la famille des Asteraceae, de 30 à 80 cm de hauteur, aux fleurs blanches ou jaunes, utilisée dans des produits médicals, grande camomille (Tanacetum parthenium ou Chrysanthemum parthenium L.)"@fr ;
+  ontolex:lexicalizedSense :fevrefuie_sense1 .

@@ -1,0 +1,480 @@
+@prefix : <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dbr: <https://dbpedia.org/resource/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix deaf: <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexicog: <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix lexinfo: <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix lexvo: <http://lexvo.org/id/iso639-3/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix olia: <http://purl.org/olia/olia.owl#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semshift: <http://www.deaf-page.de/ns/semshift#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+deaf:DEAF a lime:Lexicon,
+        ontolex:Lexicon ;
+    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:creator [ foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ;
+            foaf:name "Sabine Tittel"@de ] ;
+    dct:date "2021-10-14"^^xsd:date ;
+    dct:publisher [ foaf:familyName "Tittel"@de ;
+            foaf:givenName "Sabine"@de ;
+            foaf:homepage <https://hadw-bw.de/forschung/forschungsstelle/dictionnaire-etymologique-de-lancien-francais-deaf> ] ;
+    dct:rights "CC-Zero" ;
+    lime:entry :festre,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#afestrir>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#enfestrer>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#enfestrir>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festrer>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festrier>,
+        <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festros> ;
+    lime:language lexvo:fro .
+
+deaf:DEAF_lexresource a lexicog:LexicographicResource ;
+    dct:language lexvo:fro ;
+    lexicog:entry deaf:festre_entry .
+
+deaf:festre_enm a ontolex:LexicalEntry ;
+    rdfs:label "festre"@enm ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:festre_goute_enm a ontolex:LexicalEntry ;
+    rdfs:label "festre goute"@enm ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:fistla_eng a ontolex:LexicalEntry ;
+    rdfs:label "fistla"@unassigned ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:unassigned,
+        "engadinois"@fr .
+
+deaf:fistla_lld a ontolex:LexicalEntry ;
+    rdfs:label "fistla"@lld ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:lld,
+        "ladin"@fr .
+
+deaf:fistla_sursilv a ontolex:LexicalEntry ;
+    rdfs:label "fistla"@unassigned ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:unassigned,
+        "sursilvain"@fr .
+
+deaf:fistle_enm a ontolex:LexicalEntry ;
+    rdfs:label "fistle"@enm ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:fistola_oc a ontolex:LexicalEntry ;
+    rdfs:label "fistola"@oc ;
+    lemonety:isCognateOf :festre ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/oc.html>,
+        lexvo:oci,
+        "occitan"@fr .
+
+deaf:fistula_enm a ontolex:LexicalEntry ;
+    rdfs:label "fistula"@enm ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:fistula_oc a ontolex:LexicalEntry ;
+    rdfs:label "fistula"@oc ;
+    lemonety:isCognateOf :festre ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/oc.html>,
+        lexvo:oci,
+        "occitan"@fr .
+
+deaf:fistula_ro a ontolex:LexicalEntry ;
+    rdfs:label "fistula"@ro ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:ron,
+        <https://id.loc.gov/vocabulary/iso639-1/ro.html>,
+        "roumain"@fr .
+
+deaf:fistule_enm a ontolex:LexicalEntry ;
+    rdfs:label "fistule"@enm ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:fistule_goutte_enm a ontolex:LexicalEntry ;
+    rdfs:label "fistule goutte"@enm ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:enm,
+        "moyen anglais"@fr .
+
+deaf:fìstola_it a ontolex:LexicalEntry ;
+    rdfs:label "fìstola"@it ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:ita,
+        <https://id.loc.gov/vocabulary/iso639-1/it.html>,
+        "italien"@fr .
+
+deaf:fístula_ca a ontolex:LexicalEntry ;
+    rdfs:label "fístula"@ca ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:cat,
+        <https://id.loc.gov/vocabulary/iso639-1/ca.html>,
+        "catalan"@fr .
+
+deaf:fístula_es a ontolex:LexicalEntry ;
+    rdfs:label "fístula"@es ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:spa,
+        <https://id.loc.gov/vocabulary/iso639-1/es.html>,
+        "espagnol"@fr .
+
+deaf:fístula_pt a ontolex:LexicalEntry ;
+    rdfs:label "fístula"@por ;
+    lemonety:isCognateOf :festre ;
+    dct:language lexvo:por,
+        <https://id.loc.gov/vocabulary/iso639-1/pt.html>,
+        "portugais"@fr .
+
+deaf:idem a rdf:Property .
+
+:cassia_fistre a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "cassia fistre"@fro ;
+    decomp:subterm :festre ;
+    ontolex:canonicalForm :cassia_fistre_form ;
+    ontolex:evokes :festre_sense4_lexConcept ;
+    ontolex:sense :festre_sense4 ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+:gote_festre a ontolex:LexicalEntry,
+        ontolex:MultiwordExpression ;
+    rdfs:label "gote festre"@fro ;
+    decomp:subterm :festre ;
+    ontolex:canonicalForm :gote_festre_form ;
+    ontolex:evokes :festre_sense3.a_lexConcept ;
+    ontolex:sense :festre_sense3.a ;
+    vartrans:lexicalRel lexinfo:collocation .
+
+deaf:afestrir_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#afestrir> .
+
+deaf:enfestrer_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#enfestrer> .
+
+deaf:enfestrir_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#enfestrir> .
+
+deaf:festre_entity a lexicog:LexicographicComponent ;
+    lexicog:describes :festre .
+
+deaf:festre_entry a lexicog:Entry ;
+    rdfs:member deaf:afestrir_entity,
+        deaf:enfestrer_entity,
+        deaf:enfestrir_entity,
+        deaf:festre_entity,
+        deaf:festrer_entity,
+        deaf:festrier_entity,
+        deaf:festros_entity .
+
+deaf:festrer_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festrer> .
+
+deaf:festrier_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festrier> .
+
+deaf:festros_entity a lexicog:LexicographicComponent ;
+    lexicog:describes <https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festros> .
+
+deaf:fistula_etymon a lemonety:Etymon ;
+    rdfs:label "fistula"@la ;
+    lemonety:isEtymologyOf deaf:festre_etymology ;
+    dct:language lexvo:lat,
+        <https://id.loc.gov/vocabulary/iso639-1/la.html>,
+        "latin"@fr .
+
+:afestrir_form_afestrir a ontolex:Form ;
+    ontolex:writtenRep "afestrir"@xno .
+
+:cassia_fistre_form a ontolex:Form ;
+    ontolex:writtenRep "cassia fistre"@fro .
+
+:enfestrer_form_enfestrer a ontolex:Form ;
+    ontolex:writtenRep "enfestrer"@xno .
+
+:enfestrir_form_enfestrir a ontolex:Form ;
+    ontolex:writtenRep "enfestrir"@xno .
+
+:festre_form_feske a ontolex:Form ;
+    ontolex:writtenRep "feske"@unassigned .
+
+:festre_form_feste a ontolex:Form ;
+    ontolex:writtenRep "feste"@fro .
+
+:festre_form_fester a ontolex:Form ;
+    ontolex:writtenRep "fester"@xno .
+
+:festre_form_festre a ontolex:Form ;
+    ontolex:writtenRep "festre"@fro .
+
+:festre_form_festru a ontolex:Form ;
+    ontolex:writtenRep "festru"@fro .
+
+:festre_form_fetre a ontolex:Form ;
+    ontolex:writtenRep "fetre"@fro .
+
+:festre_form_fister a ontolex:Form ;
+    ontolex:writtenRep "fister"@fro .
+
+:festre_form_fistle a ontolex:Form ;
+    ontolex:writtenRep "fistle"@fro .
+
+:festre_form_fistre a ontolex:Form ;
+    ontolex:writtenRep "fistre"@fro .
+
+:festre_form_fitre a ontolex:Form ;
+    ontolex:writtenRep "fitre"@fro .
+
+:festre_form_flautre a ontolex:Form ;
+    ontolex:writtenRep "flautre"@fro .
+
+:festre_form_flestre a ontolex:Form ;
+    ontolex:writtenRep "flestre"@fro .
+
+:festrer_form_festrer a ontolex:Form ;
+    ontolex:writtenRep "festrer"@xno .
+
+:festrier_form_festrier a ontolex:Form ;
+    ontolex:writtenRep "festrier"@xno .
+
+:festros_form_festros a ontolex:Form ;
+    ontolex:writtenRep "festros"@fro .
+
+:gote_festre_form a ontolex:Form ;
+    ontolex:writtenRep "gote festre"@fro .
+
+deaf:festre_etymology a lemonety:Etymology ;
+    lemonety:etymology deaf:fistula_etymon .
+
+:afestrir_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article afestrir / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :afestrir_sense1_lexConcept .
+
+:afestrir_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "se transformer en fistule"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :afestrir_sense1 .
+
+:enfestrer_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article enfestrer / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :enfestrer_sense1_lexConcept .
+
+:enfestrer_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "se transformer en fistule"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :enfestrer_sense1 .
+
+:enfestrir_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article enfestrir / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :enfestrir_sense1_lexConcept .
+
+:enfestrir_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "se transformer en fistule"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :enfestrir_sense1 .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festre#afestrir> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :afestrir_form_afestrir ;
+    ontolex:evokes :afestrir_sense1_lexConcept ;
+    ontolex:sense :afestrir_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:IntransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.intr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festre#enfestrer> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :enfestrer_form_enfestrer ;
+    ontolex:evokes :enfestrer_sense1_lexConcept ;
+    ontolex:sense :enfestrer_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:IntransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.intr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festre#enfestrir> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :enfestrir_form_enfestrir ;
+    ontolex:evokes :enfestrir_sense1_lexConcept ;
+    ontolex:sense :enfestrir_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:IntransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.intr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festrer> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :festrer_form_festrer ;
+    ontolex:evokes :festrer_sense1_lexConcept ;
+    ontolex:sense :festrer_sense1 ;
+    synsem:synBehavior [ a synsem:SyntacticFrame,
+                lexinfo:IntransitiveFrame ] ;
+    lexinfo:partOfSpeech lexinfo:verb,
+        "v.intr."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festrier> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :festrier_form_festrier ;
+    ontolex:evokes :festrier_sense1_lexConcept ;
+    ontolex:sense :festrier_sense1 ;
+    lexinfo:partOfSpeech lexinfo:Adjective,
+        "adj."@fr .
+
+<https://deaf-server.adw.uni-heidelberg.de/lemme/festre#festros> a ontolex:LexicalEntry,
+        ontolex:Word ;
+    ontolex:canonicalForm :festros_form_festros ;
+    ontolex:evokes :festros_sense1_lexConcept ;
+    ontolex:sense :festros_sense1 ;
+    lexinfo:partOfSpeech lexinfo:Adjective,
+        "adj."@fr .
+
+:festre_sense1 a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article festre / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :festre_sense1_lexConcept .
+
+:festre_sense1.a a ontolex:LexicalSense ;
+    dct:subject dbr:Botany ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article festre / main sense number 1.a"@en ;
+    ontolex:isLexicalizedSenseOf :festre_sense1.a_lexConcept .
+
+:festre_sense1.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "écorce (moulue ou non) d’un cannelier dépouillée de son épiderme, aromatique, utilisée dans la cuisine et dans des préparations officinales, cannelle de Ceylan ou cannelle de Chine"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/China> ;
+    ontolex:lexicalizedSense :festre_sense1.a .
+
+:festre_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "conduit à section plus ou moins arrondie (en matière rigide, flexible ou souple) destiné à faire passer un liquide ou un gaz, tuyau"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Pipe_(fluid_conveyance)> ;
+    ontolex:lexicalizedSense :festre_sense1 .
+
+:festre_sense2_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "instrument de musique fait d’une tige de roseau dont la moelle a été dégagée et qui a été trouée (d’un nombre variable de trous), sorte de flûte ou de pipeau"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Flute> ;
+    ontolex:lexicalizedSense :festre_sense2 .
+
+:festre_sense3 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article festre / main sense number 3"@en ;
+    ontolex:isLexicalizedSenseOf :festre_sense3_lexConcept .
+
+:festre_sense3.a a ontolex:LexicalSense ;
+    rdfs:comment "DEAF article festre / sub sense number 3.a"@en ;
+    ontolex:isLexicalizedSenseOf :festre_sense3.a_lexConcept .
+
+:festre_sense3.a_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "maladie (considérée comme causée par des gouttes d'humeur viciée) qui se manifeste comme fistule ou comme ulcère"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :festre_sense3.a .
+
+:festre_sense3_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "abouchement anormal d'une cavité dans une autre donnant passage de façon continue à un produit physiologique (urine, matière fécale, bile, etc.) ou purulent qui s'écoule à la surface du corps (ayant une forme qui ressemble à un ulcère) ou dans une cavité interne, fistule"@fr ;
+    ontolex:isConceptOf <http://www.dbpedia.org/resource/Fistula> ;
+    ontolex:lexicalizedSense :festre_sense3 .
+
+:festre_sense4 a ontolex:LexicalSense ;
+    dct:subject dbr:Botany ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article festre / main sense number 4"@en ;
+    ontolex:isLexicalizedSenseOf :festre_sense4_lexConcept .
+
+:festre_sense4_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "fruit du cassier en forme de gousse mesurant de 30 à 60 cm de longueur et de 1,5 à 2,5 cm de largeur et, par métonymie, la pulpe de ce fruit"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :festre_sense4 .
+
+:festrer_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article festrer / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :festrer_sense1_lexConcept .
+
+:festrer_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "se transformer en fistule"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :festrer_sense1 .
+
+:festrier_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article festrier / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :festrier_sense1_lexConcept .
+
+:festrier_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "qui est de la nature de la fistule, fistuleux"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :festrier_sense1 .
+
+:festros_sense1 a ontolex:LexicalSense ;
+    dct:subject dbr:Medicine ;
+    olia:hasRegister olia:TechnicalRegister ;
+    rdfs:comment "DEAF article festros / main sense number 1"@en ;
+    ontolex:isLexicalizedSenseOf :festros_sense1_lexConcept .
+
+:festros_sense1_lexConcept a ontolex:LexicalConcept ;
+    skos:definition "qui est atteint d'une fistule"@fr ;
+    ontolex:isConceptOf "to be mapped" ;
+    ontolex:lexicalizedSense :festros_sense1 .
+
+:festre_sense2 a ontolex:LexicalSense ;
+    semshift:associateRelation semshift:ConceptualContiguity ;
+    semshift:metonymy :festre_sense2 ;
+    rdfs:comment "DEAF article festre / main sense number 2"@en,
+        "usage: annotation in top level of semantic structure"@en ;
+    ontolex:isLexicalizedSenseOf :festre_sense2_lexConcept ;
+    ontolex:usage dbr:Metonymy .
+
+:festre a ontolex:LexicalEntry,
+        ontolex:Word ;
+    lemonety:etymology deaf:festre_etymology ;
+    ontolex:canonicalForm :festre_form_festre ;
+    ontolex:evokes :festre_sense1.a_lexConcept,
+        :festre_sense1_lexConcept,
+        :festre_sense2_lexConcept,
+        :festre_sense3_lexConcept ;
+    ontolex:otherForm :festre_form_feske,
+        :festre_form_feste,
+        :festre_form_fester,
+        :festre_form_festru,
+        :festre_form_fetre,
+        :festre_form_fister,
+        :festre_form_fistle,
+        :festre_form_fistre,
+        :festre_form_fitre,
+        :festre_form_flautre,
+        :festre_form_flestre ;
+    ontolex:sense :festre_sense1,
+        :festre_sense1.a,
+        :festre_sense2,
+        :festre_sense3 ;
+    lexinfo:gender lexinfo:feminine ;
+    lexinfo:partOfSpeech lexinfo:Noun,
+        "f."@fr .

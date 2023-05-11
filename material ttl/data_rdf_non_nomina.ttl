@@ -1,0 +1,138 @@
+@prefix :         <https://deaf-server.adw.uni-heidelberg.de/lemme/> .
+@prefix deaf:     <https://deaf-server.adw.uni-heidelberg.de#> .
+@prefix ontolex:  <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix synsem:   <http://www.w3.org/ns/lemon/synsem#> .
+@prefix dbr:      <https://dbpedia.org/resource/> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix lexinfo:  <https://lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix olia:     <http://purl.org/olia/olia.owl#> .
+@prefix decomp:   <http://www.w3.org/ns/lemon/decomp#> .
+@prefix lemonety: <http://lari-datasets.ilc.cnr.it/lemonEty#> .
+@prefix lexvo:    <http://lexvo.org/id/iso639-3/> .
+@prefix lime:     <http://www.w3.org/ns/lemon/lime#> .
+@prefix lexicog:  <http://www.w3.org/ns/lemon/lexicog#> .
+@prefix semshift: <http://www.deaf-page.de/ns/semshift#> .
+
+
+# 10 Adverbien:
+deaf:lou\#lovin skos:definition "à la manière d'un loup"@fr .
+deaf:feminin\#feminalement skos:definition "à la manière d'une femme"@fr .
+deaf:figure_1 skos:definition "d’une manière figurée"@fr .
+deaf:figure_2 skos:definition "d’une manière symbolique"@fr .
+deaf:figure_3 skos:definition "d’une façon qui, dans l’ordre quantitatif, dépasse de loin la moyenne"@fr .
+deaf:hart skos:definition "sous peine de pendaison"@fr .
+deaf:hascheusement skos:definition "d’une manière marquée de souffrance, de douleur"@fr .
+deaf:jal skos:definition "au point du jour, au chant du coq"@fr .
+deaf:joste_1 skos:definition "à petite distance de, à côté de"@fr .
+deaf:joste_2 skos:definition "en direction de"@fr .
+
+deaf:bas\#bassetement skos:definition "à voix basse, dans une posture basse"@fr .
+deaf:cert\#certes skos:definition "certainement, en vérité; pour de bon, sérieusement"@fr .
+deaf:chief\#achief skos:definition "à la fin; à l'extrémité"@fr .
+deaf:chief\#cevchief skos:definition "jusqu’au bout"@fr .
+deaf:chief\#chevaument skos:definition "en qualité de vassal direct"@fr .
+deaf:chief\#de_rechief skos:definition "de nouveau, encore une fois"@fr .
+deaf:ensemble skos:definition "l’un avec l’autre (de personnes, de choses); l’un en même temps que l’autre"@fr .
+deaf:ensemble\#ensembleement skos:definition "ensemble, tout à la fois"@fr .
+deaf:lige\#ligement skos:definition "selon le lien féodal qui unit le vassal au seigneur"@fr .
+deaf:monter\#sormontablement skos:definition "en s'élevant au-dessus"@fr .
+
+
+# 10 Adjektive:
+deaf:festre\#festrier skos:definition "qui est de la nature de la fistule, fistuleux"@fr .
+deaf:ladre\#lazeré skos:definition "bruni à la manière d'un ladre"@fr .
+deaf:ebe_4 skos:definition "qui a été jeté sur la côte pendant le reflux de la mer"@fr .
+deaf:efimere_1 skos:definition "qui dure un jour ou peu plus (dit de la fièvre, de la peine)"@fr .
+deaf:efimere_2 skos:definition "qui souffre de la fièvre efimere"@fr .
+deaf:efimere_3 skos:definition "qui ne vit qu’un jour"@fr .
+deaf:efimere_4 skos:definition "qui a rapport à un jour"@fr .
+deaf:engrot1 skos:definition "qui évoque un état maladif"@fr .
+deaf:faisse skos:definition "qui présente des bandes (de couleur, dit du pelage)"@fr .
+deaf:jurer_4 skos:definition "qui est soumis (par serment) au droit de retour (en cas d’/apertura feudi/)"@fr .
+
+deaf:bas\#bassein skos:definition "qui est plus bas, inférieur"@fr .
+deaf:bas\#basset skos:definition "qui est un peu bas"@fr .
+deaf:chief\#achevable skos:definition "qui peut ou qui doit être exécuté"@fr .
+deaf:chief\#chevagié skos:definition "qui est obligé de payer le tribut"@fr .
+deaf:chief\#chevancable skos:definition "qui possède un héritage"@fr .
+deaf:familïer_1 skos:definition "qui appartient à la famille, ou qui, par ses relations intimes, est considéré comme un membre de la famille"@fr .
+deaf:familïer_2 skos:definition "qui est bien connu, dont on a l’expérience habituelle"@fr .
+deaf:lige_1 skos:definition "qui doit à son seigneur une fidélité absolue"@fr .
+deaf:lige\#demilige skos:definition "qui prête serment de fidélité pour un arrière-fief"@fr .
+deaf:langue\#langos skos:definition "qui est bavard"@fr .
+
+
+
+# 10 Verben:
+deaf:voler\#voleter skos:definition "s'essayer à voler, à la manière des petits oiseaux, aussi flotter au vent"@fr .
+deaf:banir_1 skos:definition "condammer une personne à sortir d'un pays, avec défense d'y rentrer"@fr .
+deaf:ebe_3 skos:definition "être au reflux (de la mer)"@fr .
+deaf:festele_1 skos:definition "produire (de nouveau) le son d’une festele (2o)"@fr .
+deaf:festele_2 skos:definition "avoir le dernier mot"@fr .
+deaf:festele_3 skos:definition "laisser (de nouveau) la parole (à qn)"@fr .
+deaf:festele_4 skos:definition "faire du bruit"@fr .
+deaf:festele_5 skos:definition "produire un son accompagné de résonances qui résultent de pas d’hommes, de chevaux etc., résonner"@fr .
+deaf:festre_1 skos:definition "se transformer en fistule"@fr .
+deaf:liier skos:definition "entourer (un tonneau) de cerceaux"@fr .
+
+deaf:bas\#abasser skos:definition "diminuer, décliner; devenir bas (au sens de tardif)"@fr .
+deaf:cert\#acerter_1 skos:definition "rendre certain, assurer; affermir; se mettre en sûreté"@fr .
+deaf:cert\#acerter_2 skos:definition "être certain, assuré"@fr .
+deaf:chief\#cheviier skos:definition "lever la tête"@fr .
+deaf:chief\#chevir skos:definition "aboutir, venir à bout de"@fr .
+deaf:chief\#meschever skos:definition "tomber (moralement), échouer; avoir du malheur"@fr .
+deaf:lige\#ligement skos:definition "acquérir en toute propriété"@fr .
+deaf:langue\#langaier skos:definition "examiner la langue d’un porc pour voir s’il est ladre"@fr .
+deaf:langue\#langoier skos:definition "agiter la langue comme pour essayer de parler"@fr .
+deaf:fierge\#enfergier skos:definition "charger (qn) d’entraves, de fers, de chaînes, etc. afin d’empêcher son mouvement(pour le faire prisonnier)"@fr .
+
+
+# 20 Substantive, die von den vier Methoden bisher nicht erfasst werden:
+deaf:figure_4 skos:definition "personne ou sa manière d’être, considérée comme pouvant être imitée"@fr .
+deaf:acorder\#desacordé skos:definition "celui qui est en mésintelligence avec qn"@fr .
+deaf:afable\#afabilité skos:definition "caractère de celui qui est affable"@fr .
+deaf:aigue\#eweor skos:definition "celui qui est responsable de l’eau"@fr .
+deaf:ajoindre\#adjoint skos:definition "celui qui est associé à qn comme aide"@fr .
+deaf:alumer\#alumeor skos:definition "celui qui est chargé d'allumer (les chandelles etc.)"@fr .
+deaf:apeler\#apelé skos:definition "celui qui est cité en justice"@fr .
+deaf:aumaçor skos:definition "émir; chef de l'armée arabe; expression servant à qualifier celui qui est doué de bravoure"@fr .
+deaf:alegre\#alegrece skos:definition "état de celui qui est allègre, joie qui se manifeste extérieurement"@fr .
+deaf:banir_2 skos:definition "celui qui est condamné à rester en dehors de son pays"@fr .
+deaf:ban\#banier2 skos:definition "celui qui est sujet à la banalité"@fr .
+deaf:roïne skos:definition "femme qui exerce le pouvoir royal, aussi femme d'un roi"@fr .
+deaf:ebdomadier skos:definition "religieux qui exerce une certaine fonction pendant une semaine"@fr .
+deaf:ebe_1 skos:definition "mouvement de la marée descendante, reflux; durée de ce reflux"@fr .
+deaf:ebe_2 skos:definition "laps de temps qui comprend la durée d’une marée"@fr .
+deaf:edor skos:definition "désignation persane pour la fleur"@fr .
+deaf:herde skos:definition "troupeau (de bestiaux)"@fr .
+deaf:jurer_1 skos:definition "membre du conseil chargé d’administrer une ville"@fr .
+deaf:jurer_2 skos:definition "fonction d’un membre du conseil chargé d’administrer une ville"@fr .
+deaf:jurer_3 skos:definition "prison décrétée, confirmée (par des jurés)"@fr .
+
+deaf:bas\#bassiere skos:definition "ce qui se peut hausser et baisser, particulièrement dans une écluse"@fr .
+deaf:bas\#bassoiet skos:definition "banc très bas"@fr .
+deaf:bas\#sousbassement skos:definition "partie inférieure d’une construction"@fr .
+deaf:bas\#rebas skos:definition "surface en retrait"@fr .
+deaf:bas\#bassure skos:definition "sorte de longue robe cérémonielle, portée par les prêtres de l’Ancien Testament"@fr .
+deaf:bas\#baissiee skos:definition "jouer une cadence"@fr .
+deaf:bas\#embassement_1 skos:definition "espèce de piédestal continu sous la masse d’un bâtiment"@fr .
+deaf:bas\#embassement_2 skos:definition "galerie pour la circulation"@fr .
+deaf:cert\#certise skos:definition "certitude, fermeté de la foi"@fr .
+deaf:chief skos:definition "celui qui est à la tête d'un groupe, qui en ordonne l'action"@fr .
+deaf:chief\#cap skos:definition "pointe de terre, souvent élevée, qui s'avance dans la mer"@fr .
+deaf:chief\#chanfrein skos:definition "pièce d'armure couvrant le devant de la tête du cheval"@fr .
+deaf:chief\#chevagier skos:definition "serf, homme de corps, qui doit le cens capital"@fr .
+deaf:chief\#chevaigne skos:definition "corvée ou redevance pécuniaire"@fr .
+deaf:chief\#chevelice skos:definition "territoire où l'on peut exiger le cens capital"@fr .
+deaf:chief\#chevissement skos:definition "entretien, nourriture, ce dont on a besoin"@fr.
+deaf:chief\#chiefmes skos:definition "habitation principale du domaine"@fr .
+deaf:chief\#chieve skos:definition "droit du chief seigneur"@fr .
+deaf:chief\#chievetaille skos:definition "partie du harnais"@fr .
+deaf:lige_2 skos:definition "suzerain envers qui l’on est tenu par l’hommage lige"@fr .
